@@ -1,0 +1,109 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'index'
+    var id_page = 'id-page-index'
+    var class_page = 'class-page-index'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  //- script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+ 
+block content
+  section.hero 
+    .section-bg.container 
+      .hero__title 
+        span This is 
+        h1 Visia
+  section.about 
+    .container 
+      .section-title 
+        .section-title__square 
+        h2.section-title__text Про нашу компанію
+      .about__descr-container 
+        p  VISIA Terra Project – це компанія, що базується на інноваційній IT-платформі для створення будівельних генпроєктів та об’єднання гравців ринку нерухомості на різних етапах будівництва. Входить до складу холдингу SAGA Development.
+        p.about__descr-years ©2012-23
+      .about__advantages-wrap 
+        p Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
+        p Завдяки системному управлінню, VISIA Terra Project надає змогу підхопити проєкт на будь-якій стадії, інтегрувавши у нього свою систему менеджменту, що забезпечує якісне завершення та здачу об’єктів в експлуатацію.
+        p Наші замовники в реальному часі відслідковують всі процеси, що паралельно відбуваються у ході реалізації проєктів. Прозорість – наш головний принцип, на якому побудована система управління командами та звітність перед замовниками.
+      .about__img-wrap 
+        img(src="./assets/images/about-1.jpg" alt="project 1").img-wrap__small-img
+        .img-wrap__text 
+          p Projects 
+          p {150}
+        img(src="./assets/images/about-2.jpg" alt="project 2").img-wrap__big-img
+      .about__projects-descr 
+        p Наразі портфель компанії VISIA Terra Project налічує близько 150 проєктів на різних стадіях виконання (від urban-концепції до розробки робочої документації), робота над якими побудована виключно за технологіями ВІМ, що значно підвищує якість запроєктованих об’єктів для гравців ринку нерухомості.
+  section.mission
+    .container 
+      .section-title 
+        .section-title__square 
+        h2.section-title__text Місія та переваги
+      .mission__descr-container 
+        p  Створення прозорої технологічної платформи для відбудови України, що є важливою складовою для об’єднання сторін: держава - міжнародні донори - виконавці. 
+        p.mission__descr-label Union  
+      .mission__img-container 
+        img(src="./assets/images/mission.jpg" alt="project")
+  section.team
+    .container 
+      .section-title 
+        .section-title__square 
+        h2.section-title__text Засновники
+      .team__founders-cards-wrap
+        .founders-card 
+          img(src="" alt="")
+          .founders-card__text-wrap 
+            p.founders-card__name Вікторія Сорель
+            p.founders-card__descr Співвласниця, генеральний директор, ідеолог компанії VISIA Terra Project
+        .founders-card 
+          img(src="" alt="")
+          .founders-card__text-wrap 
+            p.founders-card__name Андрій Вавриш
+            p.founders-card__descr  Iдеолог та візіонер компанії VISIA Terra Project
+      .team__members-cards-wrap 
+        .team__members-descr 
+          p Наша команда менеджменту — це динамічний і висококваліфікований злагоджений колектив, який керує всіма аспектами діяльності підприємства.
+        .team__gallery 
+          //team-cards grid
+  section.filler
+    .filler-bg.container 
+      .filler-title 
+        h2 Visia 
+        h2 З нами 
+        h2 Просто 
+  section.projects 
+   .container
+      .section-title 
+        .section-title__square 
+        h2.section-title__text Проєкти
+      .mission__descr-container 
+        p  Результатом діяльності VISIA Terra Project є 3,5 мільйона квадратних метрів площі запроєктованих об'єктів житлового та адміністративного призначення. Крім цього, понад 50 об’єктів промислового призначення, в тому числі автозаправні станції.
+        p.mission__descr-label Result
+      .about__advantages-wrap 
+        p Комплекс проєктної документації, що є результатом діяльності VISIA Terra Project, відповідає державним будівельним нормам України та адаптивний під європейські стандарти та норми. 
+   
+    
+
+
+
+      
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

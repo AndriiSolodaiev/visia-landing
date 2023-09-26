@@ -1,0 +1,21 @@
+@import './assets/vars'; // переменные
+
+@import './common/container.scss';
+
+// assets
+@import './assets/mixins'; // миксины
+@import './assets/fonts'; // шрифты
+@import './assets/base'; // общие стили
+// @import './assets/animation'; // анимации
+
+@import './assets/templates.scss';
+
+// includes
+@import './header';
+@import './footer';
+@import './404';
+
+@import '../../pug/components/form/form';
+@import '../../pug/components/toster/toster';
+
+//bulge
