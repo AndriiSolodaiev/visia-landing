@@ -11,18 +11,31 @@ block variable
         link: pagesLink[0].about
       }
     ]
-  
+    var teamMembers = [
+      {num:1, name: "Ольга Іваненко", position: "Архітектор" },
+      {num:2, name: "Жан Рено", position: "Фотограф" },
+      {num:3, name: "Марія Петренко", position: "Менеджер" },
+      {num:4, name: "Микола Кузьменко", position: "Смм-спеціаліст" },
+      {num:5, name: "Олександр Пустоцвіт", position: "СЕО" },
+      {num:6, name: "Юлія Ковальчук", position: "Копірайтер" },
+      {num:7, name: "Анна Михайлова", position: "Менеджер" },
+      {num:8, name: "Ірина Сергієнко", position: "Pr-менеджер" },
+      {num:9, name: "Іван Поплавський", position: "Таргетолог" },
+      {num:10, name: "Тетяна Григорчук", position: "Заступник директора" },
+      {num:11, name: "Михайло Коваленко", position: "Директор" },
+      {num:12, name: "Софія Левченко", position: "Менеджер" },
+    ]
 block meta
   title= title_page
-  meta(name='description', content='')
+  meta(name='description' content='')
 block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
 block scripts
   //- script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/header.bundle.js')
   script(defer src='./assets/scripts/footer.bundle.js')
- 
+
 block content
   section.hero 
     .section-bg.container 
@@ -66,20 +79,27 @@ block content
         h2.section-title__text Засновники
       .team__founders-cards-wrap
         .founders-card 
-          img(src="" alt="")
+          img(src="./assets/images/boss1.jpg" alt="Victoria Sorel")
           .founders-card__text-wrap 
             p.founders-card__name Вікторія Сорель
             p.founders-card__descr Співвласниця, генеральний директор, ідеолог компанії VISIA Terra Project
         .founders-card 
-          img(src="" alt="")
+          img(src="./assets/images/boss2.jpg" alt="Andrii Vavrysh")
           .founders-card__text-wrap 
             p.founders-card__name Андрій Вавриш
             p.founders-card__descr  Iдеолог та візіонер компанії VISIA Terra Project
       .team__members-cards-wrap 
         .team__members-descr 
           p Наша команда менеджменту — це динамічний і висококваліфікований злагоджений колектив, який керує всіма аспектами діяльності підприємства.
-        .team__gallery 
-          //team-cards grid
+        .team__gallery
+          each member in teamMembers
+            .member-card(class=`member-card${member.num}`) 
+              img(src=`./assets/images/member${member.num}.jpg` alt=member.name )
+              .member__text-wrap 
+                p.member__name=member.name
+                p.member__position=member.position
+
+
   section.filler
     .filler-bg.container 
       .filler-title 
@@ -87,7 +107,7 @@ block content
         h2 З нами 
         h2 Просто 
   section.projects 
-   .container
+    .container
       .section-title 
         .section-title__square 
         h2.section-title__text Проєкти
@@ -96,12 +116,12 @@ block content
         p.mission__descr-label Result
       .about__advantages-wrap 
         p Комплекс проєктної документації, що є результатом діяльності VISIA Terra Project, відповідає державним будівельним нормам України та адаптивний під європейські стандарти та норми. 
-   
-    
 
 
 
-      
+
+
+
 block footer
   include ../includes/footer.pug
 
