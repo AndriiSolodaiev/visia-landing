@@ -12,7 +12,6 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-
 }
 
 .section-bg {
@@ -40,17 +39,13 @@
 
     align-self: flex-end;
     width: 100%;
-
-
   }
 
   & div {
-
-
     width: 100%;
     height: 1px;
     background-color: $color-white;
-    margin-bottom: 50px
+    margin-bottom: 50px;
   }
 }
 
@@ -108,8 +103,6 @@ section {
   }
 }
 
-
-
 .about__advantages-wrap {
   display: flex;
   width: 100%;
@@ -137,7 +130,6 @@ section {
 
   & img {
     object-fit: cover;
-
   }
 }
 
@@ -194,8 +186,6 @@ section {
   margin-bottom: 50px;
 }
 
-
-
 .mission__img-container {
   width: 100%;
   overflow: hidden;
@@ -203,7 +193,6 @@ section {
   & img {
     object-fit: cover;
   }
-
 }
 
 .team {
@@ -239,13 +228,34 @@ section {
 
   & img {
     width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  &:hover img {
+    transform: scale(1.2);
+  }
+  &:hover span {
+    max-height: 300px;
   }
 }
-
+.founders-card__mask {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: background-color 1s ease;
+  .founders-card:hover & {
+    background-color: #00000042;
+  }
+}
 .founders-card__text-wrap {
   position: absolute;
   bottom: 30px;
   left: 30px;
+  z-index: 2;
 }
 
 .founders-card__name {
@@ -258,6 +268,14 @@ section {
   @include text-style-text;
   color: $color-white;
   max-width: 424px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  & span {
+    transition: max-height 1s ease;
+    max-height: 0px;
+    overflow: hidden;
+  }
 }
 
 .team__members-descr {
@@ -267,6 +285,7 @@ section {
 
 .team__gallery {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 50px;
@@ -275,8 +294,6 @@ section {
 
 .member-card {
   position: relative;
-
-
 }
 
 .member-card1 {
@@ -289,7 +306,6 @@ section {
 
   & img {
     align-self: flex-end;
-
   }
 }
 
@@ -309,7 +325,6 @@ section {
   width: 100%;
   height: 100%;
   grid-area: 2 / 2 / 3 / 3;
-
 }
 
 .member-card6 {
@@ -334,7 +349,6 @@ section {
 
   & img {
     align-self: flex-end;
-
   }
 }
 
@@ -349,12 +363,11 @@ section {
 .member__text-wrap {
   position: absolute;
   bottom: 30px;
-  left: 30px
+  left: 30px;
 }
 
 .member__name {
   @extend .founders-card__name;
-
 }
 
 .member__position {
@@ -363,12 +376,19 @@ section {
 
 .filler {
   padding-top: 0;
+  position: relative;
+  width: 100vw;
+  height: 150vh;
 }
 
 .filler-bg {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
   background-image: url('../images/filler.jpg');
-  width: 100vw;
-  height: 150vh;
 }
 
 .filler-title {
@@ -381,7 +401,7 @@ section {
     align-self: flex-start;
   }
 
-  & h2:nth-child(2n) {
+  & .filler__second-title {
     align-self: flex-end;
   }
 }
@@ -396,11 +416,9 @@ section {
 
 .project__img-wrap {
   margin-bottom: 20px;
-
 }
 
 .project__text-wrap {
-
   & h3 {
     @include text-style-descr;
     position: relative;
@@ -408,7 +426,7 @@ section {
     line-height: 100%;
 
     &::before {
-      content: "";
+      content: '';
       display: inline-block;
       position: absolute;
       top: 50%;
@@ -419,4 +437,31 @@ section {
       background-color: $color-1-1;
     }
   }
+}
+.projects__descr-container {
+  @extend .mission__descr-container;
+}
+.projects__advantages-wrap {
+  @extend .about__advantages-wrap;
+}
+.swiper-scrollbar-wrap {
+  position: relative;
+  padding: 20px 0;
+}
+.projects .swiper .swiper-scrollbar {
+  height: 7px;
+  top: 0;
+  /* Округліть кути скроллбара */
+  /* Задайте бажаний колір фону скроллбара */
+  background-color: $color-1-3;
+}
+
+.projects .swiper .swiper-scrollbar .swiper-scrollbar-drag {
+  background-image: linear-gradient(
+    269deg,
+    #ecd3ab 0%,
+    #ead0b7 51.34%,
+    #fefce9 100%
+  ); /* Задайте бажаний колір полоси прокрутки */
+  /* Задайте ширину полоси прокрутки */
 }

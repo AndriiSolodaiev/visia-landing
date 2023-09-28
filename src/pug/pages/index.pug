@@ -85,20 +85,26 @@ block content
       .team__founders-cards-wrap
         .founders-card 
           img(src="./assets/images/boss1.jpg" alt="Victoria Sorel")
+          .founders-card__mask
           .founders-card__text-wrap 
             h3.founders-card__name Вікторія Сорель
-            p.founders-card__descr Співвласниця, генеральний директор, ідеолог компанії VISIA Terra Project
+            .founders-card__descr 
+              p Співвласниця, генеральний директор, ідеолог компанії VISIA Terra Project
+              span Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ipsa explicabo facilis sit tempora porro perspiciatis, culpa impedit nihil incidunt ducimus! Doloribus ducimus eveniet quas voluptatibus ut dignissimos hic illo.
         .founders-card 
           img(src="./assets/images/boss2.jpg" alt="Andrii Vavrysh")
+          .founders-card__mask
           .founders-card__text-wrap 
             h3.founders-card__name Андрій Вавриш
-            p.founders-card__descr  Iдеолог та візіонер компанії VISIA Terra Project
+            .founders-card__descr
+              p Iдеолог та візіонер компанії VISIA Terra Project
+              span Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ipsa explicabo facilis sit tempora porro perspiciatis, culpa impedit nihil incidunt ducimus! Doloribus ducimus eveniet quas voluptatibus ut dignissimos hic illo.
       .team__members-cards-wrap 
         .team__members-descr 
           p Наша команда менеджменту — це динамічний і висококваліфікований злагоджений колектив, який керує всіма аспектами діяльності підприємства.
         .team__gallery
           each member in teamMembers
-            .member-card(class=`member-card${member.num}`) 
+            .member-card(class=`member-card${member.num} member-card`) 
               img(src=`./assets/images/member${member.num}.jpg` alt=member.name )
               .member__text-wrap 
                 h3.member__name=member.name
@@ -111,24 +117,28 @@ block content
 
 
   section.filler
-    .filler-bg.container 
+    .bg-img-parallax 
+      .filler-bg(img-parallax)
+    .container 
       .filler-title 
         h2 Visia 
-        h2 З нами 
+        p.filler__second-title З нами 
         h2 Просто 
   section.projects 
     .container
       .section-title 
         .section-title__square 
         h2.section-title__text Проєкти
-      .mission__descr-container 
+      .projects__descr-container
         p  Результатом діяльності VISIA Terra Project є 3,5 мільйона квадратних метрів площі запроєктованих об'єктів житлового та адміністративного призначення. Крім цього, понад 50 об’єктів промислового призначення, в тому числі автозаправні станції.
         p Result
-      .about__advantages-wrap 
+      .projects__advantages-wrap 
         p Комплекс проєктної документації, що є результатом діяльності VISIA Terra Project, відповідає державним будівельним нормам України та адаптивний під європейські стандарти та норми. 
       .swiper
+        .swiper-scrollbar-wrap
+          .swiper-scrollbar
         .swiper-wrapper
-
+          
           .swiper-slide
             .project__card 
               .project__img-wrap 
@@ -147,7 +157,7 @@ block content
                 img(src="./assets/images/project-Washington.jpg" alt="project Washington")
               .project__text-wrap 
                 h3 Washington Concept House 
-
+        
 
 
 
