@@ -5,9 +5,9 @@ const config = {
   mode: process.argv.includes('--production') ? 'production' : 'development',
   entry: {
     // 'immediate-loading': './src/assets/scripts/immediate-loading.js',
-   index: "./src/assets/scripts/gulp-modules/index.js",
-   header: "./src/assets/scripts/header.js",
-   footer: "./src/assets/scripts/footer.js"
+    index: './src/assets/scripts/gulp-modules/index.js',
+    header: './src/assets/scripts/header.js',
+    footer: './src/assets/scripts/footer.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -43,6 +43,10 @@ const config = {
         test: /\.(glsl|vs|fs|vert|frag)$/,
         exclude: /node_modules/,
         use: ['raw-loader', 'glslify-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },

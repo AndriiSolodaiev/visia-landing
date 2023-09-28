@@ -1,1 +1,62 @@
+.footer {}
 
+.footer-logo {
+  width: 100%;
+  position: relative;
+  margin-bottom: 100px;
+
+  & svg {
+    width: 100.971px;
+    height: 27.514px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    height: 1px;
+    background-color: $color-1-1;
+    opacity: 0.2;
+    width: 100%;
+  }
+
+}
+
+.footer__info-wrap {
+  display: flex;
+  justify-content: space-between
+}
+
+.footer__adress-phone-wrap {
+  display: flex;
+  gap: 166px;
+
+  & a {
+    @include text-style-text;
+    color: $color-white;
+  }
+}
+
+.footer__socials {
+  display: flex;
+  gap: 177px;
+  @include text-style-text;
+  color: $color-white
+}
+
+.dev-logo__wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 40px;
+  padding-bottom: 0px;
+
+}
+
+.dev-logo {
+  svg {
+    width: 80px;
+    height: 80px;
+  }
+}
