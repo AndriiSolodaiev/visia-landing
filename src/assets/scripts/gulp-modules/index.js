@@ -1,3 +1,4 @@
+import '../modules/loader/loader';
 import Swiper from 'swiper';
 import { Scrollbar } from 'swiper';
 import 'swiper/css';
@@ -5,6 +6,7 @@ import 'swiper/css/scrollbar';
 import '../modules/effects/imgParallax';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Lenis from '@studio-freight/lenis';
+import '../modules/loader/loader';
 gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis({
   lerp: 0.1,
@@ -156,7 +158,7 @@ missionTl
   .from('.mission .section-title', { scale: 0, duration: 0.3 })
   .add(animateText('.mission'), '<0.2')
   .from('.mission__img-container', { scale: 0.2, opacity: 0.4 }, '<')
-  .from('.mission__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<0.5')
+  .from('.mission__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 })
   .fromTo(
     '.mission__img-container img',
     { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)', opacity: 0 },
