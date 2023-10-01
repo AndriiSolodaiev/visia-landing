@@ -39,7 +39,7 @@ block scripts
 block content
   section.hero 
     .bg-img-parallax 
-      .section-bg(img-parallax)
+      img.section-bg(src="./assets/images/hero-bg.jpg" alt="Chicago" img-parallax)
     .container.hero__title-container
       .hero__title 
         span This is 
@@ -52,21 +52,23 @@ block content
         h2.section-title__text Про нашу компанію
       .about__descr-container 
         p  VISIA Terra Project – це компанія, що базується на інноваційній IT-платформі для створення будівельних генпроєктів та об’єднання гравців ринку нерухомості на різних етапах будівництва. Входить до складу холдингу SAGA Development.
-        p ©2012-23
-      .about__advantages-wrap 
-        p Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
-        p Завдяки системному управлінню, VISIA Terra Project надає змогу підхопити проєкт на будь-якій стадії, інтегрувавши у нього свою систему менеджменту, що забезпечує якісне завершення та здачу об’єктів в експлуатацію.
-        p Наші замовники в реальному часі відслідковують всі процеси, що паралельно відбуваються у ході реалізації проєктів. Прозорість – наш головний принцип, на якому побудована система управління командами та звітність перед замовниками.
-      .about__img-wrap
-        .img-wrap__small-img 
-          img(src="./assets/images/about-1.jpg" alt="project 1" )
-        .img-wrap__text 
-          p Projects 
-          p.anim__text {150}
-        .img-wrap__big-img
-          img(src="./assets/images/about-2.jpg" alt="project 2")
-      .about__projects-descr 
-        p Наразі портфель компанії VISIA Terra Project налічує близько 150 проєктів на різних стадіях виконання (від urban-концепції до розробки робочої документації), робота над якими побудована виключно за технологіями ВІМ, що значно підвищує якість запроєктованих об’єктів для гравців ринку нерухомості.
+        p.mobile-none ©2012-23
+      .about__adwantages-img-container 
+        .about__adwantages-img--first
+          .about__advantage
+          p.about__advantage Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
+          .img-wrap__small-img 
+            img(src="./assets/images/about-1.jpg" alt="project 1" img-parallax) 
+          .img-wrap__text 
+            p Projects 
+            p.anim__text {150}
+        .about__adwantages-img--second 
+          p.about__advantage Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
+          p.about__advantage Завдяки системному управлінню, VISIA Terra Project надає змогу підхопити проєкт на будь-якій стадії, інтегрувавши у нього свою систему менеджменту, що забезпечує якісне завершення та здачу об’єктів в експлуатацію.
+          .img-wrap__big-img
+            img(src="./assets/images/about-2.jpg" alt="project 2" img-parallax)
+          p.about__projects-descr  Наразі портфель компанії VISIA Terra Project налічує близько 150 проєктів на різних стадіях виконання (від urban-концепції до розробки робочої документації), робота над якими побудована виключно за технологіями ВІМ, що значно підвищує якість запроєктованих об’єктів для гравців ринку нерухомості.
+
   section.mission
     .container 
       .section-title 
@@ -74,7 +76,7 @@ block content
         h2.section-title__text Місія та переваги
       .mission__descr-container 
         p  Створення прозорої технологічної платформи для відбудови України, що є важливою складовою для об’єднання сторін: держава - міжнародні донори - виконавці. 
-        p Union  
+        p.mobile-none Union  
       .mission__img-container 
         img(src="./assets/images/mission.jpg" alt="project" img-parallax) 
   section.team
@@ -83,23 +85,30 @@ block content
         .section-title__square 
         h2.section-title__text Засновники
       .team__founders-cards-wrap
-        .founders-card 
-          img(src="./assets/images/boss1.jpg" alt="Victoria Sorel")
-          .founders-card__mask
-          .founders-card__text-wrap 
-            h3.founders-card__name Вікторія Сорель
-            .founders-card__descr 
-              p Співвласниця, генеральний директор, ідеолог компанії VISIA Terra Project
-              span Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ipsa explicabo facilis sit tempora porro perspiciatis, culpa impedit nihil incidunt ducimus! Doloribus ducimus eveniet quas voluptatibus ut dignissimos hic illo.
-        .founders-card 
-          img(src="./assets/images/boss2.jpg" alt="Andrii Vavrysh")
-          .founders-card__mask
-          .founders-card__text-wrap 
-            h3.founders-card__name Андрій Вавриш
-            .founders-card__descr
-              p Iдеолог та візіонер компанії VISIA Terra Project
-              span Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ipsa explicabo facilis sit tempora porro perspiciatis, culpa impedit nihil incidunt ducimus! Doloribus ducimus eveniet quas voluptatibus ut dignissimos hic illo.
+        .founders-card.founder-card-1
+          .founders__img-wrap
+            img(src="./assets/images/boss1.jpg" alt="Victoria Sorel")
+            .founders-card__mask
+            .founders-card__text-wrap 
+              h3.founders-card__name Вікторія Сорель
+              .founders-card__descr
+                p Співвласниця, генеральний директор, ідеолог компанії VISIA Terra Project
+                span Топ-менеджерка з великим практичним досвідом запуску побудови та реорганізації бізнесів на різних етапах розвитку. Інженерка-будівельниця з досвідом проєктування та будівництва об’єктів промислового та цивільного призначення в Україні та ЄС.
+          .founders__descr--mobile.founder-card-decsr-1 
+            p Топ-менеджерка з великим практичним досвідом запуску побудови та реорганізації бізнесів на різних етапах розвитку. Інженерка-будівельниця з досвідом проєктування та будівництва об’єктів промислового та цивільного призначення в Україні та ЄС.
+        .founders-card.founder-card-2
+          .founders__img-wrap
+            img(src="./assets/images/boss2.jpg" alt="Andrii Vavrysh")
+            .founders-card__mask
+            .founders-card__text-wrap 
+              h3.founders-card__name Андрій Вавриш
+              .founders-card__descr
+                p Iдеолог та візіонер компанії VISIA Terra Project
+                span СЕО холдингу SAGA Development, експерт ринку нерухомості із багаторічним досвідом у галузі девелопменту та будівництва.
+          .founders__descr--mobile.founder-card-decsr-2
+            p СЕО холдингу SAGA Development, експерт ринку нерухомості із багаторічним досвідом у галузі девелопменту та будівництва.
       .team__members-cards-wrap 
+        canvas(id="space").team-members__bg
         .team__members-descr 
           p Наша команда менеджменту — це динамічний і висококваліфікований злагоджений колектив, який керує всіма аспектами діяльності підприємства.
         .team__gallery
@@ -131,7 +140,7 @@ block content
         h2.section-title__text Проєкти
       .projects__descr-container
         p  Результатом діяльності VISIA Terra Project є 3,5 мільйона квадратних метрів площі запроєктованих об'єктів житлового та адміністративного призначення. Крім цього, понад 50 об’єктів промислового призначення, в тому числі автозаправні станції.
-        p Result
+        p.mobile-none Result
       .projects__advantages-wrap 
         p Комплекс проєктної документації, що є результатом діяльності VISIA Terra Project, відповідає державним будівельним нормам України та адаптивний під європейські стандарти та норми. 
       .swiper

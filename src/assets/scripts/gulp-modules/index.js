@@ -7,6 +7,7 @@ import '../modules/effects/imgParallax';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Lenis from '@studio-freight/lenis';
 import '../modules/loader/loader';
+import { executeFrame } from '../modules/effects/teamStars';
 gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis({
   lerp: 0.1,
@@ -33,6 +34,9 @@ const swiper = new Swiper('.swiper', {
     draggable: true,
   },
   breakpoints: {
+    768: {
+      slidesPerView: 1.5,
+    },
     1366: {
       slidesPerView: 2,
     },
@@ -40,29 +44,47 @@ const swiper = new Swiper('.swiper', {
 });
 
 const heroTl = gsap.timeline();
-heroTl
-  .from('.hero__title span', {
-    autoAlpha: 0,
-    xPercent: 50,
-    duration: 1.2,
-  })
-  .from(
-    '.hero__title h1',
-    {
-      autoAlpha: 0,
-      xPercent: -50,
-      duration: 1.2,
-    },
-    '<',
-  )
-  .from(
-    '.hero__title div',
-    {
-      scale: 0,
-      duration: 1.2,
-    },
-    '<',
-  );
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    heroTl
+      .fromTo('.section-bg', { scale: 1.2, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 1 })
+      .from(
+        '.hero__title span',
+        {
+          autoAlpha: 0,
+          xPercent: 50,
+          duration: 1.2,
+        },
+        '<0.2',
+      )
+      .from(
+        '.hero__title h1',
+        {
+          autoAlpha: 0,
+          xPercent: -50,
+          duration: 1.2,
+        },
+        '<',
+      )
+      .from(
+        '.hero__title div',
+        {
+          scale: 0,
+          duration: 1.2,
+        },
+        '<',
+      )
+      .from(
+        '.header',
+        {
+          scale: 0.5,
+          opacity: 0,
+          duration: 1,
+        },
+        '<',
+      );
+  }, 4500);
+});
 
 //Анімована поява тексту по літері
 
@@ -107,7 +129,7 @@ function animateText(selector) {
 const aboutTl = gsap.timeline({
   scrollTrigger: {
     trigger: '.about',
-    start: 'top+=20% center',
+    start: 'top center',
     end: '+=10%',
   },
 });
@@ -122,34 +144,44 @@ aboutTl
     '<0.5',
   );
 
-const aboutImgTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.about__img-wrap',
-    start: 'top center',
-    end: '+=50%',
-
-    scrub: 1,
+gsap.fromTo(
+  '.img-wrap__small-img img',
+  {
+    clipPath: 'polygon(0 0, 0 0, 100% 0, 100% 0)',
+    opacity: 0,
+    scale: 1.5,
   },
-});
-
-aboutImgTl
-  .fromTo(
-    '.img-wrap__small-img img',
-    { clipPath: 'polygon(0 0, 0 0, 100% 0, 100% 0)', opacity: 0 },
-    { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', scale: 1.5, opacity: 1 },
-  )
+  {
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+    scale: 1,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: '.img-wrap__small-img',
+      start: 'top center',
+      end: '+=50%',
+    },
+  },
+);
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.img-wrap__big-img',
+      start: 'top center',
+      end: '+=50%',
+    },
+  })
   .fromTo(
     '.img-wrap__big-img img',
     { clipPath: 'polygon(0 0, 0 0, 100% 100%, 0 0)', opacity: 0 },
     { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', scale: 1.5, opacity: 1 },
     '<',
   )
-  .from('.img-wrap__text .anim__text', { xPercent: -700 }, '<').from;
+  .from('.img-wrap__text .anim__text', { xPercent: -700, opacity: 0 }, '<').from;
 
 const missionTl = gsap.timeline({
   scrollTrigger: {
     trigger: '.mission',
-    start: 'top+=20% center',
+    start: 'top center',
     end: '+=10%',
   },
 });
@@ -158,14 +190,15 @@ missionTl
   .from('.mission .section-title', { scale: 0, duration: 0.3 })
   .add(animateText('.mission'), '<0.2')
   .from('.mission__img-container', { scale: 0.2, opacity: 0.4 }, '<')
-  .from('.mission__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 })
+  .from('.mission__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<')
   .fromTo(
     '.mission__img-container img',
     { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)', opacity: 0 },
     { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', opacity: 1 },
     '<',
   );
-
+// animation();
+executeFrame();
 const teamTl = gsap.timeline({
   scrollTrigger: {
     trigger: '.team',
@@ -174,92 +207,72 @@ const teamTl = gsap.timeline({
   },
 });
 
-teamTl
-  .from('.team .section-title', { scale: 0, duration: 0.3 })
-  .add(animateText('.team'), '<0.2')
-  .from('.mission__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<0.5')
-  .fromTo(
-    '.founders-card',
-    { xPercent: 100, autoAlpha: 0, stagger: 0.3, duration: 2 },
-    { xPercent: 0, autoAlpha: 1 },
-    '<',
-  );
-
-// const teamMembersTl = gsap.timeline({
+// gsap.to('.founder-card-decsr-1', {
+//   height: 140,
 //   scrollTrigger: {
-//     trigger: '.team',
-//     start: 'top center',
-//     end: '+=10%',
-//
+//     trigger: '.founder-card-1',
+//     start: '20% 20%',
+//     end: '+=30%',
+//     scrub: 1,
+//     markers: true,
 //   },
+//   duration: 2,
 // });
+// gsap.to('.founder-card-decsr-2', {
+//   height: 140,
+//   scrollTrigger: {
+//     trigger: '.founder-card-2',
+//     start: 'center 20%',
+//     end: '+=30%',
+//     scrub: 1,
+//     markers: true,
+//   },
+//   duration: 2,
+// });
+teamTl.from('.team .section-title', { scale: 0, duration: 0.3 }).add(animateText('.team'), '<0.2');
+// .from('.team__members-descr  p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<0.5');
+// .fromTo(
+//   '.founders-card',
+//   { xPercent: 100, autoAlpha: 0, stagger: 0.3, duration: 2 },
+//   { xPercent: 0, autoAlpha: 1 },
+//   '<',
+// );
+
 document.querySelectorAll('.member-card').forEach((member, index, array) => {
-  // if (index < 4) {
   gsap
     .timeline({
       scrollTrigger: {
         trigger: array[index],
-        start: 'top 70%',
-        end: '+=50%',
+        start: 'top 90%',
+        end: '+=40%',
+        markers: true,
+        scrub: 1,
       },
     })
     .fromTo(
       member,
       {
+        scale: 0,
         opacity: 0,
         y: (100 + Math.random() * -200) * 2,
         delay: 0.1 * Math.random() * 4,
-        rotateY: -45,
-        rotateX: 15,
-        rotateY: 45,
-        clipPath: 'polygon(0 0, 0 100%, 100% 0, 0% 100%)',
+        // rotateY: -45,
+        // rotateX: 15,
+        // rotateY: 45,
+        // clipPath: 'polygon(0 0, 0 100%, 100% 0, 0% 100%)',
       },
       {
+        scale: 1,
         opacity: 1,
         y: 0,
         delay: 0.1 * Math.random() * 4,
-        rotateY: 0,
-        rotateX: 0,
-        rotateY: 0,
-        clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0% 100%)',
+        // rotateY: 0,
+        // rotateX: 0,
+        // rotateY: 0,
+        // clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0% 100%)',
         duration: 0.7,
       },
     );
-  // }
-  // if (4 <= index && index < 7) {
-  //   gsap
-  //     .timeline({
-  //       scrollTrigger: {
-  //         trigger: array[5],
-  //         start: 'top 80%',
-  //         end: '+=50%',
-  //       },
-  //     })
-  //     .from(member, { opacity: 0, y: -100, delay: index * 0.2 });
-  // }
-  // if (7 <= index && index < 10) {
-  //   gsap
-  //     .timeline({
-  //       scrollTrigger: {
-  //         trigger: array[8],
-  //         start: 'top 80%',
-  //         end: '+=50%',
-  //       },
-  //     })
-  //     .from(member, { opacity: 0, x: 100, delay: Math.pow(0.2, index - 7) });
-  // }
-  // if (10 <= index && index < 12) {
-  //   gsap
-  //     .timeline({
-  //       scrollTrigger: {
-  //         trigger: array[10],
-  //         start: 'top 80%',
-  //         end: '+=50%',
-  //       },
-  //     })
-  //     .from(member, { opacity: 0, y: 100, delay: index * 0.01 });
-  // }
-  // return;
 });
 const fillerTl = gsap.timeline({
   scrollTrigger: {
@@ -287,7 +300,7 @@ fillerTl
 const projectsTl = gsap.timeline({
   scrollTrigger: {
     trigger: '.projects',
-    start: 'top+=20% center',
+    start: 'top center',
     end: '+=10%',
   },
 });

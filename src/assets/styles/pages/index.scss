@@ -3,6 +3,12 @@
   position: relative;
   width: 100vw;
   height: 150vh;
+  @include tablet {
+    height: 170vh;
+  }
+  @include laptop {
+    height: 150vh;
+  }
 }
 
 .bg-img-parallax {
@@ -15,69 +21,103 @@
 }
 
 .section-bg {
-  padding-top: 280px;
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
-    url('../images/hero-bg.jpg');
 }
 
 .hero__title-container {
-  padding-top: 280px;
+  padding-top: 246px;
+  @include tablet {
+    padding-top: 332px;
+  }
+  @include laptop {
+    padding-top: 280px;
+  }
 }
 
 .hero__title {
   @include text-style-h-1;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 
   & span {
-    text-align: end;
-
     align-self: flex-end;
-    width: 100%;
+    text-align: end;
+    background: linear-gradient(269deg, #ecd3ab 0%, #a4866a 51.34%, #fefce9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    align-self: flex-end;
   }
-
+  & h1 {
+    align-self: flex-start;
+    background: linear-gradient(269deg, #ecd3ab 0%, #a4866a 51.34%, #fefce9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   & div {
     width: 100%;
     height: 1px;
-    background-color: $color-white;
-    margin-bottom: 50px;
+    background: linear-gradient(269deg, #ecd3ab 0%, #a4866a 51.34%, #fefce9 100%);
+    margin-bottom: 10px;
+    @include tablet {
+      margin-bottom: 50px;
+    }
   }
 }
 
 section {
-  padding-top: 200px;
+  padding-top: 80px;
+  @include tablet {
+    padding-top: 150px;
+  }
+  @include laptop {
+    padding-top: 200px;
+  }
 }
 
 .section-title {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 48px;
   width: 100%;
   position: relative;
-
+  @include laptop {
+    margin-bottom: 100px;
+  }
   &::after {
     content: '';
     display: block;
     position: absolute;
-    bottom: -50px;
+    bottom: -24px;
     left: 0;
     height: 1px;
     background-color: $color-1-1;
     opacity: 0.2;
     width: 100%;
+    @include laptop {
+      bottom: -50px;
+    }
   }
 }
 
 .section-title__square {
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   background-image: linear-gradient(269deg, #ecd3ab 0%, #ead0b7 51.34%, #fefce9 100%);
+  @include tablet {
+    width: 18px;
+    height: 18px;
+  }
+  @include laptop {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .section-title__text {
@@ -90,56 +130,98 @@ section {
 }
 
 .about__descr-container {
-  padding-left: 23%;
-  margin-bottom: 100px;
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-
   & p {
     @include text-style-descr;
-    max-width: 885px;
+  }
+  @include tablet {
+    & p {
+      max-width: 525px;
+    }
+  }
+  @include laptop {
+    margin-bottom: 100px;
+    padding-left: 23%;
+    & p {
+      max-width: 885px;
+    }
   }
 }
+.mobile-none {
+  display: none;
 
-.about__advantages-wrap {
+  @include tablet {
+    display: block;
+  }
+}
+.about__adwantages-img-container {
   display: flex;
+  gap: 24px;
   width: 100%;
-  gap: 50px;
-  padding-left: 23%;
-  margin-bottom: 50px;
-
-  & p {
-    @include text-style-text;
-    max-width: 418px;
+  flex-direction: column;
+  @include laptop {
+    gap: 50px;
+    flex-direction: row;
   }
 }
-
-.about__img-wrap {
+.about__adwantages-img--first {
   display: flex;
-  gap: 50px;
-  align-items: center;
-  margin-bottom: 50px;
-  flex-grow: 1;
+  gap: 24px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include laptop {
+    gap: 50px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: calc(50% - 50px / 2);
+  }
 }
-
+.about__adwantages-img--second {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include laptop {
+    gap: 50px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: calc(50% - 50px / 2);
+  }
+}
+.about__advantage {
+  @include text-style-text;
+  width: 100%;
+  @include laptop {
+    width: calc(50% - 50px / 2);
+  }
+}
 .img-wrap__small-img {
-  width: 23%;
+  flex-grow: 1;
+  width: 100%;
   overflow: hidden;
 
   & img {
     object-fit: cover;
   }
+  @include laptop {
+    width: calc(50% - 25px);
+    height: 21vw;
+  }
 }
-
 .img-wrap__text {
-  width: 23%;
-  height: 23vw;
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
+  @include laptop {
+    width: calc(50% - 50px / 2);
+    flex-grow: 1;
+    height: 21vw;
+  }
   & p {
     @include text-style-text;
 
@@ -160,83 +242,125 @@ section {
     }
   }
 }
-
 .img-wrap__big-img {
-  width: calc(100% - 46% - 100px);
-  overflow: hidden;
+  flex-grow: 1;
+  width: 100%;
 
+  overflow: hidden;
+  position: relative;
+  @include laptop {
+    height: auto;
+    flex-grow: 1;
+  }
   & img {
     object-fit: cover;
   }
 }
-
 .about__projects-descr {
+  @include text-style-text;
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
-
-  & p {
-    @include text-style-text;
-    max-width: 885px;
-  }
 }
 
 .mission__descr-container {
   @extend .about__descr-container;
   margin-bottom: 50px;
+  scale: 1;
+  opacity: 1;
 }
 
 .mission__img-container {
   width: 100%;
+  height: 640px;
   overflow: hidden;
-
+  @include tablet {
+    height: 1024px;
+  }
+  @include laptop {
+    height: auto;
+  }
   & img {
     object-fit: cover;
+    height: 640px;
+    @include tablet {
+      height: 1024px;
+    }
+    @include laptop {
+      height: auto;
+    }
   }
 }
 
 .team {
-  padding-bottom: 200px;
+  padding-bottom: 80px;
+  @include tablet {
+    padding-bottom: 150px;
+  }
+  @include laptop {
+    padding-bottom: 200px;
+  }
 }
 
 .team__founders-cards-wrap {
   width: 100%;
   display: flex;
-  gap: 50px;
-  padding-left: 23%;
+  flex-direction: column;
+  gap: 24px;
   position: relative;
-  margin-bottom: 200px;
-
+  margin-bottom: 50px;
+  @include tablet {
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+  @include laptop {
+    gap: 50px;
+    padding-left: 23%;
+    margin-bottom: 200px;
+  }
   &::after {
     content: '';
     display: block;
     position: absolute;
-    bottom: -50px;
-    left: 23%;
+    bottom: -24px;
+    left: 0;
     height: 1px;
     background-color: $color-1-1;
     opacity: 0.2;
-    width: 77%;
+    width: 100%;
+    @include laptop {
+      bottom: -50px;
+      left: 23%;
+      width: 77%;
+    }
   }
 }
 
 .founders-card {
-  width: 651px;
-
+  width: 100%;
   position: relative;
   overflow: hidden;
-
+  @include tablet {
+    width: calc(50% - 8px);
+  }
+  @include laptop {
+    width: 651px;
+    &:hover img {
+      transform: scale(1.2);
+    }
+    &:hover span {
+      max-height: 300px;
+    }
+    &:hover .founders-card__mask {
+      background-color: #0000005e;
+    }
+  }
   & img {
     width: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
   }
-  &:hover img {
-    transform: scale(1.2);
-  }
-  &:hover span {
-    max-height: 300px;
-  }
+}
+.founders__img-wrap {
+  position: relative;
 }
 .founders-card__mask {
   position: absolute;
@@ -247,21 +371,26 @@ section {
   height: 100%;
   background-color: transparent;
   transition: background-color 1s ease;
-  .founders-card:hover & {
-    background-color: #00000042;
-  }
 }
 .founders-card__text-wrap {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: 16px;
+  left: 16px;
   z-index: 2;
+
+  @include laptop {
+    width: 651px;
+  }
 }
 
 .founders-card__name {
   @include text-style-descr;
   margin-bottom: 10px;
   color: $color-white;
+  font-size: 24px;
+  @include laptop {
+    font-size: 32px;
+  }
 }
 
 .founders-card__descr {
@@ -275,9 +404,34 @@ section {
     transition: max-height 1s ease;
     max-height: 0px;
     overflow: hidden;
+    opacity: 0.5;
   }
 }
-
+.founders__descr--mobile {
+  @include text-style-text;
+  color: $color-white;
+  background-color: #030303;
+  height: 0px;
+  p {
+    padding: 16px;
+    opacity: 0.5;
+  }
+  @include laptop {
+    display: none;
+  }
+}
+.team__members-cards-wrap {
+  position: relative;
+}
+.team-members__bg {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 110%;
+  height: 130%;
+  z-index: -1;
+  background: #000;
+}
 .team__members-descr {
   @extend .about__descr-container;
   margin-bottom: 50px;
@@ -285,11 +439,21 @@ section {
 
 .team__gallery {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   width: 100%;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 50px;
-  grid-row-gap: 50px;
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  @include laptop {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+  }
 }
 
 .member-card {
@@ -298,27 +462,56 @@ section {
 
 .member-card1 {
   grid-area: 1 / 1 / 2 / 2;
+  @include tablet {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  @include laptop {
+    grid-area: 1 / 1 / 2 / 2;
+  }
 }
 
 .member-card2 {
-  grid-area: 1 / 2 / 2 / 3;
   display: flex;
-
+  grid-area: 1 / 2 / 2 / 3;
   & img {
     align-self: flex-end;
+  }
+  @include tablet {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  @include laptop {
+    grid-area: 1 / 2 / 2 / 3;
   }
 }
 
 .member-card3 {
-  grid-area: 1 / 3 / 2 / 4;
+  grid-area: 2 / 1 / 3 / 2;
+  @include tablet {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  @include laptop {
+    grid-area: 1 / 3 / 2 / 4;
+  }
 }
 
 .member-card4 {
-  grid-area: 1 / 4 / 2 / 5;
+  grid-area: 2 / 2 / 3 / 3;
+  @include tablet {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  @include laptop {
+    grid-area: 1 / 4 / 2 / 5;
+  }
 }
 
 .member-card5 {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 3 / 1 / 4 / 2;
+  @include tablet {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  @include laptop {
+    grid-area: 2 / 1 / 3 / 2;
+  }
 }
 
 .member-card--label {
@@ -328,46 +521,103 @@ section {
 }
 
 .member-card6 {
-  grid-area: 2 / 3 / 3 / 4;
+  grid-area: 3 / 2 / 4 / 3;
+  @include tablet {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  @include laptop {
+    grid-area: 2 / 3 / 3 / 4;
+  }
 }
 
 .member-card7 {
-  grid-area: 2 / 4 / 3 / 5;
+  grid-area: 4 / 1 / 5 / 2;
+  @include tablet {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  @include laptop {
+    grid-area: 2 / 4 / 3 / 5;
+  }
 }
 
 .member-card8 {
-  grid-area: 3 / 1 / 4 / 2;
+  grid-area: 4 / 2 / 5 / 3;
+  @include tablet {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  @include laptop {
+    grid-area: 3 / 1 / 4 / 2;
+  }
 }
 
 .member-card9 {
-  grid-area: 3 / 2 / 4 / 3;
+  grid-area: 5 / 1 / 6 / 2;
+  @include tablet {
+    grid-area: 3 / 3 / 4 / 4;
+  }
+  @include laptop {
+    grid-area: 3 / 2 / 4 / 3;
+  }
 }
 
 .member-card10 {
-  grid-area: 3 / 4 / 4 / 5;
   display: flex;
-
+  grid-area: 5 / 2 / 6 / 3;
   & img {
     align-self: flex-end;
+  }
+  @include tablet {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  @include laptop {
+    grid-area: 3 / 4 / 4 / 5;
   }
 }
 
 .member-card11 {
-  grid-area: 4 / 2 / 5 / 3;
+  grid-area: 6 / 1 / 7 / 2;
+  @include tablet {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+  @include laptop {
+    grid-area: 4 / 2 / 5 / 3;
+  }
 }
 
 .member-card12 {
-  grid-area: 4 / 4 / 5 / 5;
+  grid-area: 6 / 2 / 7 / 3;
+  @include tablet {
+    grid-area: 4 / 3 / 5 / 4;
+  }
+  @include laptop {
+    grid-area: 4 / 4 / 5 / 5;
+  }
 }
 
 .member__text-wrap {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: 16px;
+  left: 16px;
+  @include tablet {
+    grid-area: 4 / 3 / 5 / 4;
+  }
+  @include laptop {
+    bottom: 30px;
+    left: 30px;
+  }
 }
 
 .member__name {
   @extend .founders-card__name;
+  margin-bottom: 0;
+  font-size: 18px;
+  @include tablet {
+    font-size: 24px;
+  }
+  @include laptop {
+    margin-bottom: 10px;
+    font-size: 32px;
+  }
 }
 
 .member__position {
@@ -379,6 +629,12 @@ section {
   position: relative;
   width: 100vw;
   height: 150vh;
+  @include tablet {
+    height: 170vh;
+  }
+  @include laptop {
+    height: 150vh;
+  }
 }
 
 .filler-bg {
@@ -392,10 +648,10 @@ section {
 }
 
 .filler-title {
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   @extend .hero__title;
-  gap: 258px;
+  gap: 250px;
 
   & h2 {
     align-self: flex-start;
@@ -404,13 +660,29 @@ section {
   & .filler__second-title {
     align-self: flex-end;
   }
+  @include tablet {
+    gap: 220px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  @include desktop {
+    gap: 258px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
 }
 
 .projects {
-  padding-bottom: 200px;
+  padding-bottom: 50px;
 
   & .about__advantages-wrap {
     padding-left: 50%;
+  }
+  @include tablet {
+    padding-bottom: 150px;
+  }
+  @include laptop {
+    padding-bottom: 200px;
   }
 }
 
@@ -442,21 +714,37 @@ section {
   @extend .mission__descr-container;
 }
 .projects__advantages-wrap {
-  @extend .about__advantages-wrap;
+  @include text-style-text;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+  @include tablet {
+    p {
+      max-width: 50%;
+    }
+  }
+  @include laptop {
+    p {
+      max-width: 420px;
+    }
+  }
 }
 .swiper-scrollbar-wrap {
   position: relative;
   padding: 20px 0;
 }
 .projects .swiper .swiper-scrollbar {
-  height: 7px;
-  top: 0;
+  height: 4px;
+  top: 10px;
   /* Округліть кути скроллбара */
   /* Задайте бажаний колір фону скроллбара */
   background-color: $color-1-3;
 }
 
 .projects .swiper .swiper-scrollbar .swiper-scrollbar-drag {
+  height: 5px;
+
+  top: -2px;
   background-image: linear-gradient(
     269deg,
     #ecd3ab 0%,

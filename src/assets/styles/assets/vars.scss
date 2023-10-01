@@ -20,34 +20,64 @@ $color-txt: rgba(119, 113, 109, 1);
 @mixin text-style-h-1() {
   color: $color-white;
   font-family: $default-font;
-  font-size: 240px;
+  font-size: 64px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
   text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    font-size: 160px;
+  }
+  @media screen and (min-width: 1366px) {
+    font-size: 200px;
+  }
+  @media screen and (min-width: 1920px) {
+    font-size: 240px;
+  }
 }
 @mixin text-style-h-2() {
-  font-size: 32px;
+  font-size: 16px;
   font-family: $default-font;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  letter-spacing: -1.28px;
+  letter-spacing: -0.9px;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1366px) {
+    font-size: 32px;
+  }
+  // @media screen and (min-width: 1920px) {
+  //   font-size: 32px;
+  // }
 }
 
 @mixin text-style-descr() {
   color: $color-1-1;
   font-family: $default-font;
-  font-size: 32px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1366px) {
+    font-size: 32px;
+  }
 }
 @mixin text-style-text() {
   color: $color-txt;
   font-family: $default-font;
-  font-size: 18px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1366px) {
+    font-size: 18px;
+  }
 }

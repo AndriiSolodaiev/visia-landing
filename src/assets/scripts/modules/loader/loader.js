@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { heroTl } from '../../gulp-modules';
 
 // new Ani();
 
@@ -19,7 +20,7 @@ export const preloader = {
       this.started = false;
       this.percent = 0;
       this.timePass = 0;
-      this.dur = 0;
+      this.dur = 1000 + Math.random() * 500;
 
       this.easing = function(t, b, c, d) {
         if ((t /= d / 2) < 1) return (c / 2) * t * t * t + b;
@@ -58,8 +59,6 @@ export const preloader = {
         startX = startX || Math.cos(angle) * radius + window.innerWidth / 2;
         startY = startY || Math.sin(angle) * radius + window.innerHeight / 2;
 
-        console.log(startX);
-
         this.started = true;
         this.timePass = 0;
         this.finished = false;
@@ -75,7 +74,7 @@ export const preloader = {
         this.finished = false;
         this.percent = 0;
         this.timePass = 0;
-        this.dur = 4000 + Math.random() * 6000;
+        this.dur = 2000 + Math.random() * 2000;
         //this.des = {x: x, y: y}
         this.current = this.prev = this.init;
         this.offset = { x: this.des.x - this.init.x, y: this.des.y - this.init.y };
@@ -89,7 +88,7 @@ export const preloader = {
       this.ctx;
       this.offlineCtx;
       this.offlineCvs;
-      this.background = '#000000';
+      this.background = '#222222';
       this.img;
       this.imgPos;
 
@@ -200,7 +199,7 @@ export const preloader = {
       tick: function() {
         var that = this;
 
-        var start = 100;
+        var start = 30;
         var startCount = 0;
 
         var now = new Date().getTime();
@@ -214,7 +213,7 @@ export const preloader = {
           delta = delta > 50 ? 16 : delta;
           that.cvs.innerHTML = delta;
           last = now;
-          startCount = 10000;
+          startCount = 0;
 
           if (!that.particles.length) {
             that.finish();
@@ -222,7 +221,7 @@ export const preloader = {
           }
           that.particles.forEach(function(particle) {
             if (!particle.started && startCount < start && Math.random() > 0.5) {
-              startCount += 0.0001;
+              startCount += 0.000001;
               particle.start(/* that.mouse.x, that.mouse.y */); // no mouse ...
             } else {
               particle.update(delta);
@@ -248,7 +247,7 @@ export const preloader = {
                 particle.init = tmp;
                 particle.reset();
               });
-            }, 5000);
+            }, 500);
 
             //return;
           }
@@ -286,7 +285,6 @@ export const preloader = {
           this.offlineCtx.lineTo(particle.prev.x, particle.prev.y);
           this.offlineCtx.strokeStyle = particle.color;
           this.offlineCtx.stroke();
-          // console.log(particle.color);
         }
         // this.offlineCtx.stroke();
 
@@ -327,7 +325,7 @@ export const preloader = {
     if (preloaderRef) {
       setTimeout(() => {
         this.el.remove();
-      }, 6000);
+      }, 3000);
       // gsap.to(preloaderRef, {
       //   opacity: 0,
       //   duration: 0.5,
@@ -344,10 +342,10 @@ export const preloader = {
 };
 
 window.addEventListener('load', () => {
+  preloader.animate();
   setTimeout(() => {
-    preloader.animate();
-    // preloader.remove();
-  }, 1000);
+    preloader.remove();
+  }, 1700);
 });
 
 export default preloader;

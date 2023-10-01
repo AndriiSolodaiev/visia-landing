@@ -2,20 +2,61 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: 30px;
+  padding-top: 16px;
   width: 100%;
+  @include laptop {
+    padding-top: 30px;
+  }
 }
 .header__container {
+  display: none;
+  @include tablet {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header__container--mobile {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  & .logo {
+    width: 50.486px;
+    height: 13.757px;
+    svg {
+      width: 50.486px;
+      height: 13.757px;
+    }
+  }
+  & .header__socials-wrap--mobile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header__mail svg,
+  .header__social-link svg {
+    width: 32px;
+    height: 32px;
+  }
+  @include tablet {
+    display: none;
+  }
 }
 .header__logo-socials-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
+  @include tablet {
+    width: 70%;
+  }
+
+  @include laptop {
+    width: 60%;
+  }
 }
 .logo {
   width: 100.971px;

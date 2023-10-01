@@ -1,49 +1,113 @@
-.footer {}
+.footer {
+}
 
 .footer-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   position: relative;
-  margin-bottom: 100px;
-
+  margin-bottom: 50px;
+  color: rgb(206, 195, 161);
   & svg {
-    width: 100.971px;
-    height: 27.514px;
+    width: 50.486px;
+    height: 13.757px;
   }
 
   &::after {
     content: '';
     display: block;
     position: absolute;
-    bottom: -50px;
+    bottom: -25px;
     left: 0;
     height: 1px;
     background-color: $color-1-1;
     opacity: 0.2;
     width: 100%;
+    @include laptop {
+      bottom: -50px;
+    }
+  }
+  & .header__socials-wrap--mobile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    @include tablet {
+      display: none;
+    }
+  }
+  .header__mail svg,
+  .header__social-link svg {
+    width: 32px;
+    height: 32px;
   }
 
+  @include tablet {
+    & svg {
+      width: 100.971px;
+      height: 27.514px;
+    }
+  }
+  @include laptop {
+    margin-bottom: 100px;
+  }
 }
 
 .footer__info-wrap {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  align-items: center;
+  .header__mail {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
 }
 
 .footer__adress-phone-wrap {
   display: flex;
-  gap: 166px;
+  justify-content: space-between;
+  width: 100%;
 
   & a {
     @include text-style-text;
     color: $color-white;
   }
+  .adress {
+    max-width: 165px;
+  }
+  @include tablet {
+    width: 45%;
+  }
+  @include laptop {
+    gap: 100px;
+    width: auto;
+    .adress {
+      max-width: 400px;
+    }
+  }
+  @include desktop {
+    gap: 166px;
+    .adress {
+      max-width: 400px;
+    }
+  }
 }
 
 .footer__socials {
-  display: flex;
-  gap: 177px;
-  @include text-style-text;
-  color: $color-white
+  display: none;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    @include text-style-text;
+    color: $color-white;
+  }
+  @include laptop {
+    flex-direction: row;
+    gap: 177px;
+  }
 }
 
 .dev-logo__wrap {
@@ -51,11 +115,12 @@
   justify-content: flex-end;
   padding-top: 40px;
   padding-bottom: 0px;
-
 }
 
-.dev-logo {
-  svg {
+.dev-logo svg {
+  width: 52px;
+  height: 57px;
+  @include laptop {
     width: 80px;
     height: 80px;
   }
