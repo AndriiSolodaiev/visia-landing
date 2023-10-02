@@ -20,7 +20,7 @@ export const preloader = {
       this.started = false;
       this.percent = 0;
       this.timePass = 0;
-      this.dur = 1000 + Math.random() * 500;
+      this.dur = 500 + Math.random() * 500;
 
       this.easing = function(t, b, c, d) {
         if ((t /= d / 2) < 1) return (c / 2) * t * t * t + b;
@@ -74,7 +74,7 @@ export const preloader = {
         this.finished = false;
         this.percent = 0;
         this.timePass = 0;
-        this.dur = 2000 + Math.random() * 2000;
+        this.dur = 500 + Math.random() * 1000;
         //this.des = {x: x, y: y}
         this.current = this.prev = this.init;
         this.offset = { x: this.des.x - this.init.x, y: this.des.y - this.init.y };
@@ -199,9 +199,9 @@ export const preloader = {
       tick: function() {
         var that = this;
 
-        var start = 30;
+        var start = 1;
         var startCount = 0;
-
+        console.log(12);
         var now = new Date().getTime();
         var last = now;
         var delta;
@@ -240,7 +240,7 @@ export const preloader = {
 
             reset = true;
             setTimeout(function() {
-              reset = false;
+              // reset = false;
               that.particles.forEach(function(particle) {
                 tmp = particle.des;
                 particle.des = particle.init;
@@ -345,7 +345,7 @@ window.addEventListener('load', () => {
   preloader.animate();
   setTimeout(() => {
     preloader.remove();
-  }, 1700);
+  }, 2500);
 });
 
 export default preloader;
