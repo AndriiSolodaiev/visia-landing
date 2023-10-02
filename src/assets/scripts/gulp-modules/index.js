@@ -6,7 +6,6 @@ import 'swiper/css/scrollbar';
 import '../modules/effects/imgParallax';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Lenis from '@studio-freight/lenis';
-import '../modules/loader/loader';
 import { executeFrame } from '../modules/effects/teamStars';
 gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis({
@@ -83,7 +82,7 @@ window.addEventListener('load', () => {
         },
         '<',
       );
-  }, 4500);
+  }, 5000);
 });
 
 //Анімована поява тексту по літері
