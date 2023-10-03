@@ -206,28 +206,24 @@ const teamTl = gsap.timeline({
   },
 });
 
-// gsap.to('.founder-card-decsr-1', {
-//   height: 140,
-//   scrollTrigger: {
-//     trigger: '.founder-card-1',
-//     start: '20% 20%',
-//     end: '+=30%',
-//     scrub: 1,
-//     markers: true,
-//   },
-//   duration: 2,
-// });
-// gsap.to('.founder-card-decsr-2', {
-//   height: 140,
-//   scrollTrigger: {
-//     trigger: '.founder-card-2',
-//     start: 'center 20%',
-//     end: '+=30%',
-//     scrub: 1,
-//     markers: true,
-//   },
-//   duration: 2,
-// });
+gsap.timeline().to('.founder-card-decsr-1 span', {
+  scrollTrigger: {
+    trigger: '.founder-card-1',
+    start: '10% 20%',
+    end: '+=50%',
+    scrub: 1,
+  },
+  maxHeight: 500,
+});
+gsap.timeline().to('.founder-card-decsr-2 span', {
+  scrollTrigger: {
+    trigger: '.founder-card-2',
+    start: '10% 20%',
+    end: '+=30%',
+    scrub: 1,
+  },
+  maxHeight: 500,
+});
 teamTl.from('.team .section-title', { scale: 0, duration: 0.3 }).add(animateText('.team'), '<0.2');
 // .from('.team__members-descr  p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<0.5');
 // .fromTo(
@@ -244,7 +240,7 @@ document.querySelectorAll('.member-card').forEach((member, index, array) => {
         trigger: array[index],
         start: 'top 90%',
         end: '+=40%',
-        markers: true,
+
         scrub: 1,
       },
     })
@@ -281,16 +277,28 @@ const fillerTl = gsap.timeline({
   },
 });
 fillerTl
-  .from('.filler-title h2', {
-    autoAlpha: 0,
-    xPercent: -50,
-    duration: 1.2,
-  })
-  .from(
+  .fromTo(
+    '.filler-title h2',
+    {
+      autoAlpha: 0,
+      xPercent: -50,
+      duration: 1.2,
+    },
+    {
+      autoAlpha: 1,
+      xPercent: 0,
+    },
+  )
+  .fromTo(
     '.filler__second-title',
     {
       autoAlpha: 0,
       xPercent: 50,
+      duration: 1.2,
+    },
+    {
+      autoAlpha: 1,
+      xPercent: 0,
       duration: 1.2,
     },
     '<',

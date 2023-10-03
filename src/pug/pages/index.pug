@@ -12,18 +12,18 @@ block variable
       }
     ]
     var teamMembers = [
-      {num:1, name: "Ольга Іваненко", position: "Архітектор" },
-      {num:2, name: "Жан Рено", position: "Фотограф" },
-      {num:3, name: "Марія Петренко", position: "Менеджер" },
-      {num:4, name: "Микола Кузьменко", position: "Смм-спеціаліст" },
-      {num:5, name: "Олександр Пустоцвіт", position: "СЕО" },
-      {num:6, name: "Юлія Ковальчук", position: "Копірайтер" },
-      {num:7, name: "Анна Михайлова", position: "Менеджер" },
-      {num:8, name: "Ірина Сергієнко", position: "Pr-менеджер" },
-      {num:9, name: "Іван Поплавський", position: "Таргетолог" },
-      {num:10, name: "Тетяна Григорчук", position: "Заступник директора" },
-      {num:11, name: "Михайло Коваленко", position: "Директор" },
-      {num:12, name: "Софія Левченко", position: "Менеджер" },
+      {num:1, name: "Вікторія Ковальчук", position: "Операційний директор" },
+      {num:2, name: "Євген Шуляченко", position: "Керівник проекту Генерального проектування" },
+      {num:3, name: "Єгор Філоненко", position: "Керівник проекту Генерального проектування" },
+      {num:4, name: "Лебедєва Анастасія", position: "Заступник генерального директора" },
+      {num:5, name: "Нужненко Олександр", position: "Керівник проекту Генерального проектування" },
+      {num:6, name: "Ляненко Анастасія", position: "Юридичний/адміністративний контроль" },
+      {num:7, name: "Руслан Степаненко", position: "Експерт з Кошторисної справи" },
+      {num:8, name: "Ісаєв Віктор", position: "Менеджер BIM; Керівник Технічної команди" },
+      {num:9, name: "Віталіна Юрченко", position: "Лідер креативного департаменту" },
+      {num:10, name: "Ігор Петрович", position: "Головний архітектор проекту" },
+      {num:11, name: "Людмила Андрійчук", position: "Головний менеджер з контролю дебіторської/ кредиторської заборгованості" },
+      {num:12, name: "Катерина Романюк", position: "Головний фінансовий менеджер" },
     ]
 block meta
   title= title_page
@@ -38,8 +38,12 @@ block scripts
 
 block content
   section.hero 
-    .bg-img-parallax 
-      img.section-bg(src="./assets/images/hero-bg.jpg" alt="Chicago" img-parallax)
+    .bg-img-parallax
+      picture
+        source.section-bg(srcset='./assets/images/hero-bg-mobile.jpg' media='(max-width: 767px)' img-parallax)
+        source.section-bg(srcset='./assets/images/hero-bg-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' img-parallax)
+        source.section-bg(srcset='./assets/images/hero-bg.jpg' media='(min-width: 1366px)' img-parallax)
+        img(src="./assets/images/hero-bg.jpg" alt="Chicago" img-parallax).section-bg
     .container.hero__title-container
       .hero__title 
         span This is 
@@ -57,8 +61,13 @@ block content
         .about__adwantages-img--first
           .about__advantage
           p.about__advantage Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
-          .img-wrap__small-img 
-            img(src="./assets/images/about-1.jpg" alt="project 1" img-parallax) 
+          .img-wrap__small-img
+            picture
+              source(srcset='./assets/images/about-1-mobile.jpg' media='(max-width: 767px)' loading="lazy" img-parallax)
+              source(srcset='./assets/images/about-1-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' loading="lazy" img-parallax)
+              source(srcset='./assets/images/about-1.jpg' media='(min-width: 1366px)' loading="lazy" img-parallax)
+              img(src="./assets/images/about-1.jpg" alt="Chicago" loading="lazy" img-parallax) 
+            //- img(src="./assets/images/about-1.jpg" alt="Chicago" img-parallax) 
           .img-wrap__text 
             p Projects 
             p.anim__text {150}
@@ -66,7 +75,12 @@ block content
           p.about__advantage Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
           p.about__advantage Завдяки системному управлінню, VISIA Terra Project надає змогу підхопити проєкт на будь-якій стадії, інтегрувавши у нього свою систему менеджменту, що забезпечує якісне завершення та здачу об’єктів в експлуатацію.
           .img-wrap__big-img
-            img(src="./assets/images/about-2.jpg" alt="project 2" img-parallax)
+            picture
+              source(srcset='./assets/images/about-2-mobile.jpg' media='(max-width: 767px)' loading="lazy" img-parallax)
+              source(srcset='./assets/images/about-2-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' loading="lazy" img-parallax)
+              source(srcset='./assets/images/about-2.jpg' media='(min-width: 1366px)' loading="lazy" img-parallax)
+              img(src="./assets/images/about-2.jpg" alt="Chicago" loading="lazy" img-parallax) 
+            //- img(src="./assets/images/about-2.jpg" alt="project 2" img-parallax)
           p.about__projects-descr  Наразі портфель компанії VISIA Terra Project налічує близько 150 проєктів на різних стадіях виконання (від urban-концепції до розробки робочої документації), робота над якими побудована виключно за технологіями ВІМ, що значно підвищує якість запроєктованих об’єктів для гравців ринку нерухомості.
 
   section.mission
@@ -77,8 +91,13 @@ block content
       .mission__descr-container 
         p  Створення прозорої технологічної платформи для відбудови України, що є важливою складовою для об’єднання сторін: держава - міжнародні донори - виконавці. 
         p.mobile-none Union  
-      .mission__img-container 
-        img(src="./assets/images/mission.jpg" alt="project" img-parallax) 
+      .mission__img-container
+        picture
+          source(srcset='./assets/images/mission-mobile.jpg' media='(max-width: 767px)' loading="lazy" img-parallax)
+          source(srcset='./assets/images/mission-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' loading="lazy" img-parallax)
+          source(srcset='./assets/images/mission.jpg' media='(min-width: 1366px)' loading="lazy" img-parallax)
+          img(src="./assets/images/mission.jpg" alt="Chicago" loading="lazy" img-parallax) 
+        //- img(src="./assets/images/mission.jpg" alt="project" img-parallax) 
   section.team
     .container 
       .section-title 
@@ -91,22 +110,20 @@ block content
             .founders-card__mask
             .founders-card__text-wrap 
               h3.founders-card__name Вікторія Сорель
-              .founders-card__descr
+              .founders-card__descr.founder-card-decsr-1
                 p Співвласниця, генеральний директор, ідеолог компанії VISIA Terra Project
                 span Топ-менеджерка з великим практичним досвідом запуску побудови та реорганізації бізнесів на різних етапах розвитку. Інженерка-будівельниця з досвідом проєктування та будівництва об’єктів промислового та цивільного призначення в Україні та ЄС.
-          .founders__descr--mobile.founder-card-decsr-1 
-            p Топ-менеджерка з великим практичним досвідом запуску побудови та реорганізації бізнесів на різних етапах розвитку. Інженерка-будівельниця з досвідом проєктування та будівництва об’єктів промислового та цивільного призначення в Україні та ЄС.
+
         .founders-card.founder-card-2
           .founders__img-wrap
             img(src="./assets/images/boss2.jpg" alt="Andrii Vavrysh")
             .founders-card__mask
             .founders-card__text-wrap 
               h3.founders-card__name Андрій Вавриш
-              .founders-card__descr
+              .founders-card__descr.founder-card-decsr-2
                 p Iдеолог та візіонер компанії VISIA Terra Project
                 span СЕО холдингу SAGA Development, експерт ринку нерухомості із багаторічним досвідом у галузі девелопменту та будівництва.
-          .founders__descr--mobile.founder-card-decsr-2
-            p СЕО холдингу SAGA Development, експерт ринку нерухомості із багаторічним досвідом у галузі девелопменту та будівництва.
+
       .team__members-cards-wrap 
         canvas(id="space").team-members__bg
         .team__members-descr 
@@ -114,7 +131,7 @@ block content
         .team__gallery
           each member in teamMembers
             .member-card(class=`member-card${member.num} member-card`) 
-              img(src=`./assets/images/member${member.num}.jpg` alt=member.name )
+              img(src=`./assets/images/member${member.num}.jpg` alt=member.name loading="lazy")
               .member__text-wrap 
                 h3.member__name=member.name
                 p.member__position=member.position
@@ -127,7 +144,11 @@ block content
 
   section.filler
     .bg-img-parallax 
-      .filler-bg(img-parallax)
+      picture
+        source(srcset='./assets/images/filler-mobile.jpg' media='(max-width: 767px)' loading="lazy" img-parallax).filler-img
+        source(srcset='./assets/images/filler-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' loading="lazy" img-parallax).filler-img
+        source(srcset='./assets/images/filler.jpg' media='(min-width: 1366px)' loading="lazy" img-parallax).filler-img
+        img(src="./assets/images/filler.jpg" alt="Chicago" loading="lazy" img-parallax).filler-img
     .container 
       .filler-title 
         h2 Visia 
@@ -147,26 +168,80 @@ block content
         .swiper-scrollbar-wrap
           .swiper-scrollbar
         .swiper-wrapper
-          
+
           .swiper-slide
             .project__card 
               .project__img-wrap 
-                img(src="./assets/images/project-Chicago.jpg" alt="project Chicago")
+                img(src="./assets/images/project-Chicago.jpg" alt="project Chicago" loading="lazy")
               .project__text-wrap 
                 h3 Chicago Central House
           .swiper-slide
             .project__card 
               .project__img-wrap 
-                img(src="./assets/images/project-Washington.jpg" alt="project Washington")
+                img(src="./assets/images/project-Rybalsky.jpg" alt="project Rybalsky" loading="lazy")
+              .project__text-wrap 
+                h3 Rybalsky
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Nowy-Podil.jpg" alt="Nowy-Podil" loading="lazy")
+              .project__text-wrap 
+                h3 Новий Поділ
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Kyiv.jpg" alt="kyiv project" loading="lazy")
+              .project__text-wrap 
+                h3 KYЇVPROEKT City Space
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Andriyivsky.jpg" alt="Nowy-Podil" loading="lazy")
+              .project__text-wrap 
+                h3 ANDRIYIVSKY City Space
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Residence.jpg" alt="project-Residence" loading="lazy")
+              .project__text-wrap 
+                h3 O2 Residence
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Philadelphia.jpg" alt="project-Philadelphia" loading="lazy")
+              .project__text-wrap 
+                h3 PHILADELPHIA Concept House
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-New-York.jpg" alt="New York Concept" loading="lazy")
+              .project__text-wrap 
+                h3 New York Concept
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Boston.jpg" alt="project-Boston" loading="lazy")
+              .project__text-wrap 
+                h3 BOSTON Creative House
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Resident.jpg" alt="project-Resident" loading="lazy")
+              .project__text-wrap 
+                h3 RESIDENT Concept House
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Washington.jpg" alt="project-Washington" loading="lazy")
               .project__text-wrap 
                 h3 Washington Concept House 
           .swiper-slide
             .project__card 
               .project__img-wrap 
-                img(src="./assets/images/project-Washington.jpg" alt="project Washington")
+                img(src="./assets/images/project-San-Francisco.jpg" alt="project-San-Francisco" loading="lazy")
               .project__text-wrap 
-                h3 Washington Concept House 
-        
+                h3 San Francisco Creative House
+
 
 
 

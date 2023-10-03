@@ -3,9 +3,11 @@
   position: relative;
   width: 100vw;
   height: 150vh;
+
   @include tablet {
     height: 170vh;
   }
+
   @include laptop {
     height: 150vh;
   }
@@ -28,9 +30,11 @@
 
 .hero__title-container {
   padding-top: 246px;
+
   @include tablet {
     padding-top: 332px;
   }
+
   @include laptop {
     padding-top: 280px;
   }
@@ -51,6 +55,7 @@
     -webkit-text-fill-color: transparent;
     align-self: flex-end;
   }
+
   & h1 {
     align-self: flex-start;
     background: linear-gradient(269deg, #ecd3ab 0%, #a4866a 51.34%, #fefce9 100%);
@@ -58,11 +63,13 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   & div {
     width: 100%;
     height: 1px;
     background: linear-gradient(269deg, #ecd3ab 0%, #a4866a 51.34%, #fefce9 100%);
     margin-bottom: 10px;
+
     @include tablet {
       margin-bottom: 50px;
     }
@@ -71,9 +78,11 @@
 
 section {
   padding-top: 80px;
+
   @include tablet {
     padding-top: 150px;
   }
+
   @include laptop {
     padding-top: 200px;
   }
@@ -87,9 +96,11 @@ section {
   margin-bottom: 48px;
   width: 100%;
   position: relative;
+
   @include laptop {
     margin-bottom: 100px;
   }
+
   &::after {
     content: '';
     display: block;
@@ -100,6 +111,7 @@ section {
     background-color: $color-1-1;
     opacity: 0.2;
     width: 100%;
+
     @include laptop {
       bottom: -50px;
     }
@@ -110,10 +122,12 @@ section {
   width: 16px;
   height: 16px;
   background-image: linear-gradient(269deg, #ecd3ab 0%, #ead0b7 51.34%, #fefce9 100%);
+
   @include tablet {
     width: 18px;
     height: 18px;
   }
+
   @include laptop {
     width: 32px;
     height: 32px;
@@ -134,22 +148,27 @@ section {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+
   & p {
     @include text-style-descr;
   }
+
   @include tablet {
     & p {
       max-width: 525px;
     }
   }
+
   @include laptop {
     margin-bottom: 100px;
     padding-left: 23%;
+
     & p {
       max-width: 885px;
     }
   }
 }
+
 .mobile-none {
   display: none;
 
@@ -157,21 +176,25 @@ section {
     display: block;
   }
 }
+
 .about__adwantages-img-container {
   display: flex;
   gap: 24px;
   width: 100%;
   flex-direction: column;
+
   @include laptop {
     gap: 50px;
     flex-direction: row;
   }
 }
+
 .about__adwantages-img--first {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
   flex-direction: column;
+
   @include laptop {
     gap: 50px;
     flex-wrap: wrap;
@@ -179,11 +202,13 @@ section {
     width: calc(50% - 50px / 2);
   }
 }
+
 .about__adwantages-img--second {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
   flex-direction: column;
+
   @include laptop {
     gap: 50px;
     flex-wrap: wrap;
@@ -191,13 +216,16 @@ section {
     width: calc(50% - 50px / 2);
   }
 }
+
 .about__advantage {
   @include text-style-text;
   width: 100%;
+
   @include laptop {
     width: calc(50% - 50px / 2);
   }
 }
+
 .img-wrap__small-img {
   flex-grow: 1;
   width: 100%;
@@ -206,22 +234,26 @@ section {
   & img {
     object-fit: cover;
   }
+
   @include laptop {
     width: calc(50% - 25px);
     height: 21vw;
   }
 }
+
 .img-wrap__text {
   width: 100%;
 
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
   @include laptop {
     width: calc(50% - 50px / 2);
     flex-grow: 1;
     height: 21vw;
   }
+
   & p {
     @include text-style-text;
 
@@ -242,20 +274,24 @@ section {
     }
   }
 }
+
 .img-wrap__big-img {
   flex-grow: 1;
   width: 100%;
 
   overflow: hidden;
   position: relative;
+
   @include laptop {
     height: auto;
     flex-grow: 1;
   }
+
   & img {
     object-fit: cover;
   }
 }
+
 .about__projects-descr {
   @include text-style-text;
   width: 100%;
@@ -272,18 +308,23 @@ section {
   width: 100%;
   height: 640px;
   overflow: hidden;
+
   @include tablet {
     height: 1024px;
   }
+
   @include laptop {
     height: auto;
   }
+
   & img {
     object-fit: cover;
     height: 640px;
+
     @include tablet {
       height: 1024px;
     }
+
     @include laptop {
       height: auto;
     }
@@ -292,9 +333,11 @@ section {
 
 .team {
   padding-bottom: 80px;
+
   @include tablet {
     padding-bottom: 150px;
   }
+
   @include laptop {
     padding-bottom: 200px;
   }
@@ -307,15 +350,18 @@ section {
   gap: 24px;
   position: relative;
   margin-bottom: 50px;
+
   @include tablet {
     flex-direction: row;
     margin-bottom: 50px;
   }
+
   @include laptop {
     gap: 50px;
     padding-left: 23%;
     margin-bottom: 200px;
   }
+
   &::after {
     content: '';
     display: block;
@@ -326,6 +372,7 @@ section {
     background-color: $color-1-1;
     opacity: 0.2;
     width: 100%;
+
     @include laptop {
       bottom: -50px;
       left: 23%;
@@ -338,30 +385,52 @@ section {
   width: 100%;
   position: relative;
   overflow: hidden;
+
   @include tablet {
     width: calc(50% - 8px);
   }
+
   @include laptop {
     width: 651px;
+
     &:hover img {
       transform: scale(1.2);
     }
+
     &:hover span {
       max-height: 300px;
     }
+
     &:hover .founders-card__mask {
       background-color: #0000005e;
     }
   }
+
   & img {
     width: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    height: 403px;
+
+
+    @include laptop {
+      height: 650px;
+    }
   }
 }
+
 .founders__img-wrap {
   position: relative;
+  overflow: hidden;
+  height: 403px;
+
+
+  @include laptop {
+    height: 650px;
+  }
+
 }
+
 .founders-card__mask {
   position: absolute;
   z-index: 1;
@@ -372,6 +441,7 @@ section {
   background-color: transparent;
   transition: background-color 1s ease;
 }
+
 .founders-card__text-wrap {
   position: absolute;
   bottom: 16px;
@@ -388,6 +458,7 @@ section {
   margin-bottom: 10px;
   color: $color-white;
   font-size: 24px;
+
   @include laptop {
     font-size: 32px;
   }
@@ -400,6 +471,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   & span {
     transition: max-height 1s ease;
     max-height: 0px;
@@ -407,22 +479,27 @@ section {
     opacity: 0.5;
   }
 }
+
 .founders__descr--mobile {
   @include text-style-text;
   color: $color-white;
   background-color: #030303;
   height: 0px;
+
   p {
     padding: 16px;
     opacity: 0.5;
   }
+
   @include laptop {
     display: none;
   }
 }
+
 .team__members-cards-wrap {
   position: relative;
 }
+
 .team-members__bg {
   position: absolute;
   top: -10%;
@@ -432,6 +509,7 @@ section {
   z-index: -1;
   background: #000;
 }
+
 .team__members-descr {
   @extend .about__descr-container;
   margin-bottom: 50px;
@@ -444,10 +522,12 @@ section {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   width: 100%;
+
   @include tablet {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
+
   @include laptop {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -462,9 +542,11 @@ section {
 
 .member-card1 {
   grid-area: 1 / 1 / 2 / 2;
+
   @include tablet {
     grid-area: 1 / 1 / 2 / 2;
   }
+
   @include laptop {
     grid-area: 1 / 1 / 2 / 2;
   }
@@ -473,12 +555,15 @@ section {
 .member-card2 {
   display: flex;
   grid-area: 1 / 2 / 2 / 3;
+
   & img {
     align-self: flex-end;
   }
+
   @include tablet {
     grid-area: 1 / 2 / 2 / 3;
   }
+
   @include laptop {
     grid-area: 1 / 2 / 2 / 3;
   }
@@ -486,9 +571,11 @@ section {
 
 .member-card3 {
   grid-area: 2 / 1 / 3 / 2;
+
   @include tablet {
     grid-area: 1 / 3 / 2 / 4;
   }
+
   @include laptop {
     grid-area: 1 / 3 / 2 / 4;
   }
@@ -496,9 +583,11 @@ section {
 
 .member-card4 {
   grid-area: 2 / 2 / 3 / 3;
+
   @include tablet {
     grid-area: 2 / 1 / 3 / 2;
   }
+
   @include laptop {
     grid-area: 1 / 4 / 2 / 5;
   }
@@ -506,25 +595,33 @@ section {
 
 .member-card5 {
   grid-area: 3 / 1 / 4 / 2;
+
   @include tablet {
     grid-area: 2 / 2 / 3 / 3;
   }
+
   @include laptop {
     grid-area: 2 / 1 / 3 / 2;
   }
 }
 
 .member-card--label {
-  width: 100%;
-  height: 100%;
-  grid-area: 2 / 2 / 3 / 3;
+  display: none;
+
+  @include laptop {
+    width: 100%;
+    height: 100%;
+    grid-area: 2 / 2 / 3 / 3;
+  }
 }
 
 .member-card6 {
   grid-area: 3 / 2 / 4 / 3;
+
   @include tablet {
     grid-area: 2 / 3 / 3 / 4;
   }
+
   @include laptop {
     grid-area: 2 / 3 / 3 / 4;
   }
@@ -532,9 +629,11 @@ section {
 
 .member-card7 {
   grid-area: 4 / 1 / 5 / 2;
+
   @include tablet {
     grid-area: 3 / 1 / 4 / 2;
   }
+
   @include laptop {
     grid-area: 2 / 4 / 3 / 5;
   }
@@ -542,9 +641,11 @@ section {
 
 .member-card8 {
   grid-area: 4 / 2 / 5 / 3;
+
   @include tablet {
     grid-area: 3 / 2 / 4 / 3;
   }
+
   @include laptop {
     grid-area: 3 / 1 / 4 / 2;
   }
@@ -552,9 +653,11 @@ section {
 
 .member-card9 {
   grid-area: 5 / 1 / 6 / 2;
+
   @include tablet {
     grid-area: 3 / 3 / 4 / 4;
   }
+
   @include laptop {
     grid-area: 3 / 2 / 4 / 3;
   }
@@ -563,12 +666,15 @@ section {
 .member-card10 {
   display: flex;
   grid-area: 5 / 2 / 6 / 3;
+
   & img {
     align-self: flex-end;
   }
+
   @include tablet {
     grid-area: 4 / 1 / 5 / 2;
   }
+
   @include laptop {
     grid-area: 3 / 4 / 4 / 5;
   }
@@ -576,9 +682,11 @@ section {
 
 .member-card11 {
   grid-area: 6 / 1 / 7 / 2;
+
   @include tablet {
     grid-area: 4 / 2 / 5 / 3;
   }
+
   @include laptop {
     grid-area: 4 / 2 / 5 / 3;
   }
@@ -586,9 +694,11 @@ section {
 
 .member-card12 {
   grid-area: 6 / 2 / 7 / 3;
+
   @include tablet {
     grid-area: 4 / 3 / 5 / 4;
   }
+
   @include laptop {
     grid-area: 4 / 4 / 5 / 5;
   }
@@ -598,9 +708,11 @@ section {
   position: absolute;
   bottom: 16px;
   left: 16px;
+
   @include tablet {
     grid-area: 4 / 3 / 5 / 4;
   }
+
   @include laptop {
     bottom: 30px;
     left: 30px;
@@ -611,9 +723,11 @@ section {
   @extend .founders-card__name;
   margin-bottom: 0;
   font-size: 18px;
+
   @include tablet {
     font-size: 24px;
   }
+
   @include laptop {
     margin-bottom: 10px;
     font-size: 32px;
@@ -629,23 +743,31 @@ section {
   position: relative;
   width: 100vw;
   height: 150vh;
+
   @include tablet {
     height: 170vh;
   }
+
   @include laptop {
     height: 150vh;
   }
 }
 
-.filler-bg {
-  width: 100%;
+.filler-img {
+  object-fit: cover;
   height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  background-image: url('../images/filler.jpg');
+  width: 100%;
 }
+
+// .filler-bg {
+//   width: 100%;
+//   height: 100%;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+
+//   background-image: url('../images/filler.jpg');
+// }
 
 .filler-title {
   padding-top: 80px;
@@ -660,11 +782,13 @@ section {
   & .filler__second-title {
     align-self: flex-end;
   }
+
   @include tablet {
     gap: 220px;
     padding-top: 150px;
     padding-bottom: 150px;
   }
+
   @include desktop {
     gap: 258px;
     padding-top: 200px;
@@ -678,9 +802,11 @@ section {
   & .about__advantages-wrap {
     padding-left: 50%;
   }
+
   @include tablet {
     padding-bottom: 150px;
   }
+
   @include laptop {
     padding-bottom: 200px;
   }
@@ -688,6 +814,22 @@ section {
 
 .project__img-wrap {
   margin-bottom: 20px;
+  height: 90vw;
+  overflow: hidden;
+
+
+  & img {
+    height: 100%
+  }
+
+  @include tablet {
+    height: 55vw;
+  }
+
+  @include laptop {
+    height: 45vw;
+  }
+
 }
 
 .project__text-wrap {
@@ -710,29 +852,35 @@ section {
     }
   }
 }
+
 .projects__descr-container {
   @extend .mission__descr-container;
 }
+
 .projects__advantages-wrap {
   @include text-style-text;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 24px;
+
   @include tablet {
     p {
       max-width: 50%;
     }
   }
+
   @include laptop {
     p {
       max-width: 420px;
     }
   }
 }
+
 .swiper-scrollbar-wrap {
   position: relative;
   padding: 20px 0;
 }
+
 .projects .swiper .swiper-scrollbar {
   height: 4px;
   top: 10px;
@@ -745,11 +893,10 @@ section {
   height: 5px;
 
   top: -2px;
-  background-image: linear-gradient(
-    269deg,
-    #ecd3ab 0%,
-    #ead0b7 51.34%,
-    #fefce9 100%
-  ); /* Задайте бажаний колір полоси прокрутки */
+  background-image: linear-gradient(269deg,
+      #ecd3ab 0%,
+      #ead0b7 51.34%,
+      #fefce9 100%);
+  /* Задайте бажаний колір полоси прокрутки */
   /* Задайте ширину полоси прокрутки */
 }
