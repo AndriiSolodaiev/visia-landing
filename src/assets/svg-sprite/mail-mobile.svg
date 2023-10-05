@@ -1,15 +1,15 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_243_1479)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32ZM9.83838 11.7895C10.0227 11.3282 10.4749 11 11 11H21C21.5251 11 21.9773 11.3282 22.1616 11.7895C22.0986 11.8016 22.0371 11.8268 21.9812 11.866L16 16.0528L10.0188 11.866C9.96287 11.8268 9.90136 11.8016 9.83838 11.7895ZM16.2688 17.009L22.25 12.8222V19.75C22.25 20.4375 21.6875 21 21 21H11C10.3125 21 9.75 20.4375 9.75 19.75V12.8222L15.7312 17.009C15.8926 17.122 16.1074 17.122 16.2688 17.009Z" fill="url(#paint0_linear_243_1479)"/>
-</g>
-<defs>
-<linearGradient id="paint0_linear_243_1479" x1="32" y1="-3.33739e-05" x2="-0.367119" y2="0.37571" gradientUnits="userSpaceOnUse">
-<stop stop-color="#ECD3AB"/>
-<stop offset="0.513383" stop-color="#A4866A"/>
-<stop offset="1" stop-color="#FEFCE9"/>
-</linearGradient>
-<clipPath id="clip0_243_1479">
-<rect width="32" height="32" fill="white"/>
-</clipPath>
-</defs>
+ <g clip-path="url(#ewgrewhrehre)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 32c8.837 0 16-7.163 16-16S24.837 0 16 0 0 7.163 0 16s7.163 16 16 16zM9.838 11.79c.185-.462.637-.79 1.162-.79h10c.525 0 .977.328 1.162.79a.467.467 0 0 0-.18.076L16 16.053l-5.981-4.187a.467.467 0 0 0-.18-.076zm6.43 5.219l5.982-4.187v6.928c0 .688-.563 1.25-1.25 1.25H11c-.688 0-1.25-.563-1.25-1.25v-6.928l5.981 4.187a.469.469 0 0 0 .538 0z" fill="url(#b)"></path>
+            </g>
+            <defs>
+                <linearGradient id="b" x1="32" x2="-.367" y2=".376" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#ECD3AB"></stop>
+                    <stop offset=".513" stop-color="#A4866A"></stop>
+                    <stop offset="1" stop-color="#FEFCE9"></stop>
+                </linearGradient>
+                <clipPath id="ewgrewhrehre">
+                    <path fill="#fff" d="M0 0h32v32H0z"></path>
+                </clipPath>
+            </defs>
 </svg>

@@ -13,17 +13,17 @@ block variable
     ]
     var teamMembers = [
       {num:1, name: "Вікторія Ковальчук", position: "Операційний директор" },
-      {num:2, name: "Євген Шуляченко", position: "Керівник проекту Генерального проектування" },
-      {num:3, name: "Єгор Філоненко", position: "Керівник проекту Генерального проектування" },
-      {num:4, name: "Лебедєва Анастасія", position: "Заступник генерального директора" },
-      {num:5, name: "Нужненко Олександр", position: "Керівник проекту Генерального проектування" },
-      {num:6, name: "Ляненко Анастасія", position: "Юридичний/адміністративний контроль" },
-      {num:7, name: "Руслан Степаненко", position: "Експерт з Кошторисної справи" },
-      {num:8, name: "Ісаєв Віктор", position: "Менеджер BIM; Керівник Технічної команди" },
-      {num:9, name: "Віталіна Юрченко", position: "Лідер креативного департаменту" },
-      {num:10, name: "Ігор Петрович", position: "Головний архітектор проекту" },
-      {num:11, name: "Людмила Андрійчук", position: "Головний менеджер з контролю дебіторської/ кредиторської заборгованості" },
-      {num:12, name: "Катерина Романюк", position: "Головний фінансовий менеджер" },
+      {num:2, name: "Віктор Ісаєв", position: "Менеджер BIM; Керівник Технічної команди" },
+      {num:3, name: "Анастасія Лебедева", position: "Заступник генерального директора" },
+      {num:4, name: "Віталіна Юрченко", position: "Лідер креативного департаменту (головний архітектор проекту)" },
+      {num:5, name: "Людмила Андрійчук", position: "Головний менеджер з контролю дебіторської/ кредиторської заборгованості" },
+      {num:6, name: "Анастасія Михайленко", position: "Юридичний/адміністративний контроль" },
+      {num:7, name: "Єгор Філоненко", position: "Керівник проекту Генерального проектування" },
+      {num:8, name: "Катерина Романюк", position: "Головний фінансовий менеджер" },
+      {num:9, name: "Олександр Нужненко", position: "Керівник проекту Генерального проектування" },
+      {num:10, name: "Євгеній Шуляченко", position: "Керівник проекту Генерального проектування" },
+      {num:11, name: "Руслан Степаненко", position: "Експерт з Кошторисної справи" },
+      {num:12, name: "Ігор Петрович", position: "Головний архітектор проекту" },
     ]
 block meta
   title= title_page
@@ -39,11 +39,7 @@ block scripts
 block content
   section.hero 
     .bg-img-parallax
-      picture
-        source.section-bg(srcset='./assets/images/hero-bg-mobile.jpg' media='(max-width: 767px)' img-parallax)
-        source.section-bg(srcset='./assets/images/hero-bg-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' img-parallax)
-        source.section-bg(srcset='./assets/images/hero-bg.jpg' media='(min-width: 1366px)' img-parallax)
-        img(src="./assets/images/hero-bg.jpg" alt="Chicago" img-parallax).section-bg
+      img(src="./assets/images/hero-bg.jpg" alt="Chicago" img-parallax ).section-bg
     .container.hero__title-container
       .hero__title 
         span This is 
@@ -55,32 +51,26 @@ block content
         .section-title__square 
         h2.section-title__text Про нашу компанію
       .about__descr-container 
-        p  VISIA Terra Project – це компанія, що базується на інноваційній IT-платформі для створення будівельних генпроєктів та об’єднання гравців ринку нерухомості на різних етапах будівництва. Входить до складу холдингу SAGA Development.
+        p 
+          span.accent VISIA 
+          span Terra Project – це компанія, що базується на інноваційній IT-платформі для створення будівельних генпроєктів та об’єднання гравців ринку нерухомості на різних етапах будівництва. Входить до складу холдингу SAGA Development.
         p.mobile-none ©2012-23
       .about__adwantages-img-container 
         .about__adwantages-img--first
           .about__advantage
           p.about__advantage Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
           .img-wrap__small-img
-            picture
-              source(srcset='./assets/images/about-1-mobile.jpg' media='(max-width: 767px)' loading="lazy" img-parallax)
-              source(srcset='./assets/images/about-1-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' loading="lazy" img-parallax)
-              source(srcset='./assets/images/about-1.jpg' media='(min-width: 1366px)' loading="lazy" img-parallax)
-              img(src="./assets/images/about-1.jpg" alt="Chicago" loading="lazy" img-parallax) 
-            //- img(src="./assets/images/about-1.jpg" alt="Chicago" img-parallax) 
+            img(src="./assets/images/about-1.jpg" alt="Chicago"  img-parallax) 
+
           .img-wrap__text 
             p Projects 
             p.anim__text {150}
         .about__adwantages-img--second 
-          p.about__advantage Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
-          p.about__advantage Завдяки системному управлінню, VISIA Terra Project надає змогу підхопити проєкт на будь-якій стадії, інтегрувавши у нього свою систему менеджменту, що забезпечує якісне завершення та здачу об’єктів в експлуатацію.
+          p.about__advantage Завдяки системному управлінню, VISIA Terra Project надає змогу підхопити проєкт на будь-якій стадії, інтегрувавши у нього свою систему менеджменту, що забезпечує якісне завершення та здачу об’єктів в експлуатацію. 
+          p.about__advantage Наші замовники в реальному часі відслідковують всі процеси, що паралельно відбуваються у ході реалізації проєктів. Прозорість – наш головний принцип, на якому побудована система управління командами та звітність перед замовниками.
           .img-wrap__big-img
-            picture
-              source(srcset='./assets/images/about-2-mobile.jpg' media='(max-width: 767px)' loading="lazy" img-parallax)
-              source(srcset='./assets/images/about-2-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' loading="lazy" img-parallax)
-              source(srcset='./assets/images/about-2.jpg' media='(min-width: 1366px)' loading="lazy" img-parallax)
-              img(src="./assets/images/about-2.jpg" alt="Chicago" loading="lazy" img-parallax) 
-            //- img(src="./assets/images/about-2.jpg" alt="project 2" img-parallax)
+            img(src="./assets/images/about-2.jpg" alt="Chicago"  img-parallax) 
+
           p.about__projects-descr  Наразі портфель компанії VISIA Terra Project налічує близько 150 проєктів на різних стадіях виконання (від urban-концепції до розробки робочої документації), робота над якими побудована виключно за технологіями ВІМ, що значно підвищує якість запроєктованих об’єктів для гравців ринку нерухомості.
 
   section.mission
@@ -92,12 +82,8 @@ block content
         p  Створення прозорої технологічної платформи для відбудови України, що є важливою складовою для об’єднання сторін: держава - міжнародні донори - виконавці. 
         p.mobile-none Union  
       .mission__img-container
-        picture
-          source(srcset='./assets/images/mission-mobile.jpg' media='(max-width: 767px)' loading="lazy" img-parallax)
-          source(srcset='./assets/images/mission-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' loading="lazy" img-parallax)
-          source(srcset='./assets/images/mission.jpg' media='(min-width: 1366px)' loading="lazy" img-parallax)
-          img(src="./assets/images/mission.jpg" alt="Chicago" loading="lazy" img-parallax) 
-        //- img(src="./assets/images/mission.jpg" alt="project" img-parallax) 
+        img(src="./assets/images/mission.jpg" alt="Chicago" loading="lazy" img-parallax) 
+
   section.team
     .container 
       .section-title 
@@ -106,7 +92,8 @@ block content
       .team__founders-cards-wrap
         .founders-card.founder-card-1
           .founders__img-wrap
-            img(src="./assets/images/boss1.jpg" alt="Victoria Sorel")
+            img(src="./assets/images/boss1.jpg" alt="Victoria Sorel" loading="lazy")
+            .founders__mask
             .founders-card__mask
             .founders-card__text-wrap 
               h3.founders-card__name Вікторія Сорель
@@ -116,25 +103,28 @@ block content
 
         .founders-card.founder-card-2
           .founders__img-wrap
-            img(src="./assets/images/boss2.jpg" alt="Andrii Vavrysh")
+            img(src="./assets/images/boss2.jpg" alt="Andrii Vavrysh" loading="lazy")
+            .founders__mask
             .founders-card__mask
             .founders-card__text-wrap 
               h3.founders-card__name Андрій Вавриш
               .founders-card__descr.founder-card-decsr-2
-                p Iдеолог та візіонер компанії VISIA Terra Project
+                p Співвласник, ідеолог та візіонер компанії VISIA Terra Project
                 span СЕО холдингу SAGA Development, експерт ринку нерухомості із багаторічним досвідом у галузі девелопменту та будівництва.
 
       .team__members-cards-wrap 
         canvas(id="space").team-members__bg
         .team__members-descr 
-          p Наша команда менеджменту — це динамічний і висококваліфікований злагоджений колектив, який керує всіма аспектами діяльності підприємства.
+          p Наша команда менеджменту — це динамічний і висококваліфікований злагоджений колектив, який керує всіма аспектами діяльності компанії.
         .team__gallery
           each member in teamMembers
-            .member-card(class=`member-card${member.num} member-card`) 
-              img(src=`./assets/images/member${member.num}.jpg` alt=member.name loading="lazy")
-              .member__text-wrap 
-                h3.member__name=member.name
-                p.member__position=member.position
+            .member-card(class=`member-card${member.num} member-card`)
+              .member-content__wrap
+                img(src=`./assets/images/member${member.num}.jpg` alt=member.name loading="lazy" )
+                .founders__mask
+                .member__text-wrap 
+                  h3.member__name=member.name
+                  p.member__position=member.position
           .member-card--label.img-wrap__text 
             p Best 
             p Team
@@ -143,12 +133,8 @@ block content
 
 
   section.filler
-    .bg-img-parallax 
-      picture
-        source(srcset='./assets/images/filler-mobile.jpg' media='(max-width: 767px)' loading="lazy" img-parallax).filler-img
-        source(srcset='./assets/images/filler-tablet.jpg' media='(min-width: 768px) and (max-width: 1023px)' loading="lazy" img-parallax).filler-img
-        source(srcset='./assets/images/filler.jpg' media='(min-width: 1366px)' loading="lazy" img-parallax).filler-img
-        img(src="./assets/images/filler.jpg" alt="Chicago" loading="lazy" img-parallax).filler-img
+    .filler__bg-img-parallax 
+      img(src="./assets/images/filler.jpg" alt="Chicago" loading="lazy" img-parallax).filler-img
     .container 
       .filler-title 
         h2 Visia 
@@ -160,7 +146,7 @@ block content
         .section-title__square 
         h2.section-title__text Проєкти
       .projects__descr-container
-        p  Результатом діяльності VISIA Terra Project є 3,5 мільйона квадратних метрів площі запроєктованих об'єктів житлового та адміністративного призначення. Крім цього, понад 50 об’єктів промислового призначення, в тому числі автозаправні станції.
+        p  Результатом діяльності VISIA Terra Project є 3,5 мільйони квадратних метрів площі запроєктованих об'єктів житлового та адміністративного призначення. Крім цього, понад 50 об’єктів промислового призначення, в тому числі автозаправні станції.
         p.mobile-none Result
       .projects__advantages-wrap 
         p Комплекс проєктної документації, що є результатом діяльності VISIA Terra Project, відповідає державним будівельним нормам України та адаптивний під європейські стандарти та норми. 
@@ -241,7 +227,12 @@ block content
                 img(src="./assets/images/project-San-Francisco.jpg" alt="project-San-Francisco" loading="lazy")
               .project__text-wrap 
                 h3 San Francisco Creative House
-
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Saga-Space.jpg" alt="project-Saga-Space" loading="lazy")
+              .project__text-wrap 
+                h3 Saga City Space
 
 
 

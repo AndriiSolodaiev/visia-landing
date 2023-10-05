@@ -13,7 +13,7 @@ const lenis = new Lenis({
   infinite: false,
   smoothWheel: true,
 });
-
+executeFrame();
 lenis.on('scroll', () => ScrollTrigger.update());
 
 function raf(time) {
@@ -43,47 +43,44 @@ const swiper = new Swiper('.swiper', {
 });
 
 const heroTl = gsap.timeline();
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    heroTl
-      .fromTo('.section-bg', { scale: 1.2, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 1 })
-      .from(
-        '.hero__title span',
-        {
-          autoAlpha: 0,
-          xPercent: 50,
-          duration: 1.2,
-        },
-        '<0.2',
-      )
-      .from(
-        '.hero__title h1',
-        {
-          autoAlpha: 0,
-          xPercent: -50,
-          duration: 1.2,
-        },
-        '<',
-      )
-      .from(
-        '.hero__title div',
-        {
-          scale: 0,
-          duration: 1.2,
-        },
-        '<',
-      )
-      .from(
-        '.header',
-        {
-          scale: 0.5,
-          opacity: 0,
-          duration: 1,
-        },
-        '<',
-      );
-  }, 5000);
-});
+
+heroTl
+  .fromTo('.section-bg', { scale: 1.2, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 1 })
+  .from(
+    '.hero__title span',
+    {
+      autoAlpha: 0,
+      xPercent: 50,
+      duration: 1.2,
+    },
+    '<0.2',
+  )
+  .from(
+    '.hero__title h1',
+    {
+      autoAlpha: 0,
+      xPercent: -50,
+      duration: 1.2,
+    },
+    '<',
+  )
+  .from(
+    '.hero__title div',
+    {
+      scale: 0,
+      duration: 1.2,
+    },
+    '<',
+  )
+  .from(
+    '.header',
+    {
+      scale: 0.5,
+      opacity: 0,
+      duration: 1,
+    },
+    '<',
+  );
 
 //Анімована поява тексту по літері
 
@@ -137,30 +134,33 @@ aboutTl
   .add(animateText('.about'), '<0.2')
   .from('.about__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<0.5')
   .from(
-    '.about__advantages-wrap p',
+    '.about__advantage',
     { autoAlpha: 0, duration: 1.2, stagger: 0.2 },
 
     '<0.5',
   );
 
-gsap.fromTo(
-  '.img-wrap__small-img img',
-  {
-    clipPath: 'polygon(0 0, 0 0, 100% 0, 100% 0)',
-    opacity: 0,
-    scale: 1.5,
-  },
-  {
-    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-    scale: 1,
-    opacity: 1,
+gsap
+  .timeline({
     scrollTrigger: {
       trigger: '.img-wrap__small-img',
       start: 'top center',
       end: '+=50%',
     },
-  },
-);
+  })
+  .fromTo(
+    '.img-wrap__small-img img',
+    {
+      clipPath: 'polygon(0 0, 0 0, 100% 0, 100% 0)',
+      opacity: 0,
+      scale: 1.5,
+    },
+    {
+      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+      scale: 1,
+      opacity: 1,
+    },
+  );
 gsap
   .timeline({
     scrollTrigger: {
@@ -189,15 +189,8 @@ missionTl
   .from('.mission .section-title', { scale: 0, duration: 0.3 })
   .add(animateText('.mission'), '<0.2')
   .from('.mission__img-container', { scale: 0.2, opacity: 0.4 }, '<')
-  .from('.mission__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<')
-  .fromTo(
-    '.mission__img-container img',
-    { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)', opacity: 0 },
-    { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', opacity: 1 },
-    '<',
-  );
-// animation();
-executeFrame();
+  .from('.mission__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<');
+
 const teamTl = gsap.timeline({
   scrollTrigger: {
     trigger: '.team',
@@ -210,7 +203,7 @@ gsap.timeline().to('.founder-card-decsr-1 span', {
   scrollTrigger: {
     trigger: '.founder-card-1',
     start: '10% 20%',
-    end: '+=50%',
+    end: '+=20%',
     scrub: 1,
   },
   maxHeight: 500,
@@ -219,27 +212,20 @@ gsap.timeline().to('.founder-card-decsr-2 span', {
   scrollTrigger: {
     trigger: '.founder-card-2',
     start: '10% 20%',
-    end: '+=30%',
+    end: '+=20%',
     scrub: 1,
   },
   maxHeight: 500,
 });
 teamTl.from('.team .section-title', { scale: 0, duration: 0.3 }).add(animateText('.team'), '<0.2');
-// .from('.team__members-descr  p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<0.5');
-// .fromTo(
-//   '.founders-card',
-//   { xPercent: 100, autoAlpha: 0, stagger: 0.3, duration: 2 },
-//   { xPercent: 0, autoAlpha: 1 },
-//   '<',
-// );
 
-document.querySelectorAll('.member-card').forEach((member, index, array) => {
+document.querySelectorAll('.member-content__wrap').forEach((member, index, array) => {
   gsap
     .timeline({
       scrollTrigger: {
         trigger: array[index],
-        start: 'top 90%',
-        end: '+=40%',
+        start: 'top bottom',
+        end: '+=30%',
 
         scrub: 1,
       },
@@ -247,25 +233,16 @@ document.querySelectorAll('.member-card').forEach((member, index, array) => {
     .fromTo(
       member,
       {
-        scale: 0,
+        scale: 0.6,
         opacity: 0,
         y: (100 + Math.random() * -200) * 2,
-        delay: 0.1 * Math.random() * 4,
-        // rotateY: -45,
-        // rotateX: 15,
-        // rotateY: 45,
-        // clipPath: 'polygon(0 0, 0 100%, 100% 0, 0% 100%)',
+        // delay: 0.1 * Math.random() * 1,
       },
       {
         scale: 1,
         opacity: 1,
         y: 0,
-        delay: 0.1 * Math.random() * 4,
-        // rotateY: 0,
-        // rotateX: 0,
-        // rotateY: 0,
-        // clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0% 100%)',
-        duration: 0.7,
+        delay: 0.1 * Math.random() * 1,
       },
     );
 });
