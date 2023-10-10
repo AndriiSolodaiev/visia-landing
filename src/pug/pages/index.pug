@@ -2,7 +2,7 @@
 extends ../layout/main
 block variable
   -
-    var title_page = 'index'
+    var title_page = 'VISIA'
     var id_page = 'id-page-index'
     var class_page = 'class-page-index'
     var breadcrumbsSubitem = [
@@ -14,7 +14,7 @@ block variable
     var teamMembers = [
       {num:1, name: "Вікторія Ковальчук", position: "Операційний директор" },
       {num:2, name: "Віктор Ісаєв", position: "Менеджер BIM; Керівник Технічної команди" },
-      {num:3, name: "Анастасія Лебедева", position: "Заступник генерального директора" },
+      {num:3, name: "Анастасія Лебедєва", position: "Заступник генерального директора" },
       {num:4, name: "Віталіна Юрченко", position: "Лідер креативного департаменту (головний архітектор проекту)" },
       {num:5, name: "Людмила Андрійчук", position: "Головний менеджер з контролю дебіторської/ кредиторської заборгованості" },
       {num:6, name: "Анастасія Михайленко", position: "Юридичний/адміністративний контроль" },
@@ -82,7 +82,7 @@ block content
         p  Створення прозорої технологічної платформи для відбудови України, що є важливою складовою для об’єднання сторін: держава - міжнародні донори - виконавці. 
         p.mobile-none Union  
       .mission__img-container
-        img(src="./assets/images/mission.jpg" alt="Chicago" loading="lazy" img-parallax) 
+        img(src="./assets/images/mission.jpg" alt="Chicago"  img-parallax) 
 
   section.team
     .container 
@@ -113,7 +113,7 @@ block content
                 span СЕО холдингу SAGA Development, експерт ринку нерухомості із багаторічним досвідом у галузі девелопменту та будівництва.
 
       .team__members-cards-wrap 
-        canvas(id="space").team-members__bg
+        canvas(id="dust").team-members__bg
         .team__members-descr 
           p Наша команда менеджменту — це динамічний і висококваліфікований злагоджений колектив, який керує всіма аспектами діяльності компанії.
         .team__gallery
@@ -153,6 +153,10 @@ block content
       .swiper
         .swiper-scrollbar-wrap
           .swiper-scrollbar
+        .swiper-button-prev
+          +svg("arrow-swiper")
+        .swiper-button-next
+          +svg("arrow-swiper")
         .swiper-wrapper
 
           .swiper-slide
@@ -167,6 +171,12 @@ block content
                 img(src="./assets/images/project-Rybalsky.jpg" alt="project Rybalsky" loading="lazy")
               .project__text-wrap 
                 h3 Rybalsky
+          .swiper-slide
+            .project__card 
+              .project__img-wrap 
+                img(src="./assets/images/project-Saga-Space.jpg" alt="project-Saga-Space" loading="lazy")
+              .project__text-wrap 
+                h3 Saga City Space
           .swiper-slide
             .project__card 
               .project__img-wrap 
@@ -227,12 +237,7 @@ block content
                 img(src="./assets/images/project-San-Francisco.jpg" alt="project-San-Francisco" loading="lazy")
               .project__text-wrap 
                 h3 San Francisco Creative House
-          .swiper-slide
-            .project__card 
-              .project__img-wrap 
-                img(src="./assets/images/project-Saga-Space.jpg" alt="project-Saga-Space" loading="lazy")
-              .project__text-wrap 
-                h3 Saga City Space
+
 
 
 

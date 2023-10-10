@@ -1,19 +1,21 @@
 import '../modules/loader/loader';
-import Swiper from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 import { Scrollbar } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import '../modules/effects/imgParallax';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Lenis from '@studio-freight/lenis';
-import { executeFrame } from '../modules/effects/teamStars';
+import '../modules/effects/teamStars';
+// import { executeFrame } from '../modules/effects/teamStars';
 gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis({
   lerp: 0.1,
   infinite: false,
   smoothWheel: true,
 });
-executeFrame();
+// executeFrame();
+
 lenis.on('scroll', () => ScrollTrigger.update());
 
 function raf(time) {
@@ -23,7 +25,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 const swiper = new Swiper('.swiper', {
-  modules: [Scrollbar],
+  modules: [Scrollbar, Navigation],
   speed: 1000,
   spaceBetween: 50,
   // Navigation arrows
@@ -39,6 +41,10 @@ const swiper = new Swiper('.swiper', {
     1366: {
       slidesPerView: 2,
     },
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 });
 
@@ -188,7 +194,7 @@ const missionTl = gsap.timeline({
 missionTl
   .from('.mission .section-title', { scale: 0, duration: 0.3 })
   .add(animateText('.mission'), '<0.2')
-  .from('.mission__img-container', { scale: 0.2, opacity: 0.4 }, '<')
+  .fromTo('.mission__img-container', { scale: 0.2, opacity: 0.4 }, { scale: 1, opacity: 1 }, '<')
   .from('.mission__descr-container p', { yPercent: -100, opacity: 0, duration: 1.2 }, '<');
 
 const teamTl = gsap.timeline({

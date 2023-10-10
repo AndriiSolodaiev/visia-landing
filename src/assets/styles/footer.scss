@@ -1,5 +1,4 @@
-.footer {
-}
+.footer {}
 
 .footer-logo {
   display: flex;
@@ -9,6 +8,7 @@
   position: relative;
   margin-bottom: 50px;
   color: rgb(206, 195, 161);
+
   & svg {
     width: 50.486px;
     height: 13.757px;
@@ -24,18 +24,22 @@
     background-color: $color-1-1;
     opacity: 0.2;
     width: 100%;
+
     @include laptop {
       bottom: -50px;
     }
   }
+
   & .header__socials-wrap--mobile {
     display: flex;
     align-items: center;
     gap: 16px;
+
     @include tablet {
       display: none;
     }
   }
+
   .header__mail svg,
   .header__social-link svg {
     width: 32px;
@@ -48,6 +52,7 @@
       height: 27.514px;
     }
   }
+
   @include laptop {
     margin-bottom: 100px;
   }
@@ -56,11 +61,23 @@
 .footer__info-wrap {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
+  @include tablet {
+    align-items: flex-start;
+
+  }
+
+  @include laptop {
+    align-items: center;
+
+  }
+
   .header__mail {
     display: none;
+
     @include tablet {
       display: block;
+
     }
   }
 }
@@ -74,21 +91,27 @@
     @include text-style-text;
     color: $color-white;
   }
+
   .adress {
     max-width: 165px;
   }
+
   @include tablet {
     width: 45%;
   }
+
   @include laptop {
     gap: 100px;
     width: auto;
+
     .adress {
       max-width: 400px;
     }
   }
+
   @include desktop {
     gap: 166px;
+
     .adress {
       max-width: 400px;
     }
@@ -97,6 +120,7 @@
 
 .footer__socials {
   display: none;
+
   @include tablet {
     display: flex;
     flex-direction: column;
@@ -104,9 +128,15 @@
     @include text-style-text;
     color: $color-white;
   }
+
   @include laptop {
     flex-direction: row;
-    gap: 177px;
+    gap: 2vw;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    gap: 100px;
   }
 }
 
@@ -120,6 +150,7 @@
 .dev-logo svg {
   width: 52px;
   height: 57px;
+
   @include laptop {
     width: 80px;
     height: 80px;

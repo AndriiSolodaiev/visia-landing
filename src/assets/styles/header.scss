@@ -15,7 +15,6 @@
   display: none;
 
   @include tablet {
-    display: block;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -23,11 +22,7 @@
   }
 }
 
-// .header__social-link svg {
-//   width: 16px;
-//   height: 16px;
-
-// }
+// .header__logo-socials-wrap
 
 .header__container--mobile {
   width: 100%;
@@ -73,7 +68,7 @@
   }
 
   @include laptop {
-    width: 60%;
+    width: 70%;
   }
 }
 
@@ -84,7 +79,7 @@
 
 .header__social-link {
   color: $color-white;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 100%;
 
@@ -98,8 +93,88 @@
     position: relative;
     bottom: 0;
   }
+
+
+  @include laptop {
+    font-size: 18px;
+  }
 }
 
 .header__mail {
   @extend .header__social-link;
+}
+
+.header__email-language-wrap {
+  display: flex;
+  gap: 16px;
+
+  @include laptop {
+    gap: 56px;
+  }
+
+}
+
+.header__custom-select {
+  position: relative;
+  z-index: 1;
+  // padding-right: 40px;
+  height: 16px;
+  width: 40px;
+
+  @include tablet {
+    width: 30px;
+  }
+}
+
+.header__language-block {
+  display: flex;
+  align-items: center;
+  position: absolute;
+
+  top: 0px;
+  left: 0;
+
+
+  svg {
+    width: 10px;
+    height: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    align-self: flex-start;
+  }
+}
+
+.header__language-list {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 18px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+
+  a {
+    color: $color-white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 100%;
+    pointer-events: none;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include laptop {
+      font-size: 18px;
+    }
+  }
+
+  .expanded & {
+    max-height: 50px;
+
+    a {
+      pointer-events: all;
+    }
+
+  }
 }

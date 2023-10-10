@@ -15,7 +15,19 @@ header.header
             a.header__social-link(href="#" target="_blank" rel= "nofollow noreferrer noopener") 
                 p Facebook
                 +svg("edge_arrow") 
-        a.header__mail(href="mailto:info@visia-terra.pro") info@visia-terra.pro
+            a.header__social-link(href="https://t.me/visia_terraprojectbot/?start" target="_blank" rel= "nofollow noreferrer noopener") 
+                p Telegram
+                +svg("edge_arrow") 
+        .header__email-language-wrap
+            a.header__mail(href="mailto:info@visia-terra.pro") info@visia-terra.pro
+            .header__custom-select(data-lang-select)
+                .header__language-block(data-lang-list)
+                    ul.header__language-list 
+                        li.header__language-item.active
+                            a(href="") Ua 
+                        li.header__language-item 
+                            a(href="") En
+                    +svg("lang-arrow") 
     .container.header__container--mobile 
         a.logo(href="/")
             <svg xmlns="http://www.w3.org/2000/svg" width="101" height="28" viewBox="0 0 101 28" fill="none">
@@ -25,7 +37,19 @@ header.header
                 <path d="M64.7871 26.9433V0.550781H70.4552V26.9433H64.7871Z" fill="white"/>
                 <path d="M92.6695 20.722H82.492L80.2289 26.9433H74.1914L84.5714 0.550781H90.5902L100.97 26.9433H94.9326L92.6695 20.722ZM90.7926 15.8264L87.5902 7.15828L84.3689 15.8264H90.7926Z" fill="white"/>
             </svg>
+
+
         .header__socials-wrap--mobile 
+            .header__custom-select(data-lang-select)
+                .header__language-block(data-lang-list)
+                    ul.header__language-list 
+                        li.header__language-item.active
+                            a(href="") Ua 
+                        li.header__language-item 
+                            a(href="") En
+                    +svg("lang-arrow") 
+            a.header__social-link(href="https://t.me/visia_terraprojectbot/?start" target="_blank" rel= "nofollow noreferrer noopener")
+                +svg("telegram-mobile")
             a.header__social-link(href="#" target="_blank" rel= "nofollow noreferrer noopener") 
                 +svg("facebook-mobile") 
             a.header__social-link(href="https://www.instagram.com/visia.pro/?igshid=MzRlODBiNWFlZA%3D%3Dvisia.pro" target="_blank" rel= "nofollow noreferrer noopener") 
