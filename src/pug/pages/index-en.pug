@@ -3,7 +3,7 @@ extends ../layout/main
 block variable
   -
     var title_page = 'VISIA'
-    var id_page = 'id-page-index'
+    var id_page = 'id-page-index-en'
     var class_page = 'class-page-index'
     var breadcrumbsSubitem = [
       {
@@ -49,16 +49,16 @@ block content
     .container 
       .section-title 
         .section-title__square 
-        h2.section-title__text Про нашу компанію
+        h2.section-title__text VISIA makes construction easier
       .about__descr-container 
         p 
           span.accent VISIA 
-          span Terra Project – це компанія, що базується на інноваційній IT-платформі для створення будівельних генпроєктів та об’єднання гравців ринку нерухомості на різних етапах будівництва. Входить до складу холдингу SAGA Development.
+          span Terra Project is a company based on an innovative IT platform for creating general construction projects and uniting real estate market players at different stages of construction. It is part of the SAGA Development holding.
         p.mobile-none ©2012-23
       .about__adwantages-img-container 
         .about__adwantages-img--first
           .about__advantage
-          p.about__advantage Наша унікальність та сила – це об'єднання сотень команд проєктувальників, архітекторів, дизайнерів та інженерів з усієї країни. А також 11-ти річний досвід генерального проєктування міста Києва та інших куточків України. 
+          p.about__advantage Our uniqueness and strength is the union of hundreds of teams of planners, architects, designers, and engineers from all over the country. In addition to that, we have 11 years of experience in the general design of the city of Kyiv and other parts of Ukraine.
           .img-wrap__small-img
             img(src="./assets/images/about-1.jpg" alt="Chicago"  img-parallax) 
 
@@ -66,20 +66,20 @@ block content
             p Projects 
             p.anim__text { : more 150}
         .about__adwantages-img--second 
-          p.about__advantage Завдяки системному управлінню, VISIA Terra Project надає змогу підхопити проєкт на будь-якій стадії, інтегрувавши у нього свою систему менеджменту, що забезпечує якісне завершення та здачу об’єктів в експлуатацію. 
-          p.about__advantage Наші замовники в реальному часі відслідковують всі процеси, що паралельно відбуваються у ході реалізації проєктів. Прозорість – наш головний принцип, на якому побудована система управління командами та звітність перед замовниками.
+          p.about__advantage Thanks to system management, VISIA Terra Project is able to pick up a project at any stage, integrating its management system into it, ensuring high-quality completion and commissioning of construction objects. 
+          p.about__advantage Our customers monitor in real-time all processes taking place simultaneously during the implementation of projects. Transparency is our main principle on which the team management system and customer reporting are built.
           .img-wrap__big-img
             img(src="./assets/images/about-2.jpg" alt="Chicago"  img-parallax) 
 
-          p.about__projects-descr  Наразі портфель компанії VISIA Terra Project налічує близько 150 проєктів на різних стадіях виконання (від urban-концепції до розробки робочої документації), робота над якими побудована виключно за технологіями ВІМ, що значно підвищує якість запроєктованих об’єктів для гравців ринку нерухомості.
+          p.about__projects-descr Currently, the VISIA Terra Project portfolio includes about 150 projects at various stages of implementation (from urban concept to the development of working documentation), which are implemented exclusively using BIM technologies, which significantly improves the quality of objects for real estate market players.
 
   section.mission
     .container 
       .section-title 
         .section-title__square 
-        h2.section-title__text Місія та переваги
+        h2.section-title__text Mission and benefits
       .mission__descr-container 
-        p  Створення прозорої технологічної платформи для відбудови України, що є важливою складовою для об’єднання сторін: держава - міжнародні донори - виконавці. 
+        p  Creation of a transparent technological platform for the restoration of Ukraine, which is an important component of the unification of the parties: the state, international donors, and contractors. 
         p.mobile-none Union  
       .mission__img-container
         img(src="./assets/images/mission.jpg" alt="Chicago"  img-parallax) 
@@ -88,7 +88,7 @@ block content
     .container 
       .section-title 
         .section-title__square 
-        h2.section-title__text Засновники
+        h2.section-title__text Founders
       .team__founders-cards-wrap
         .founders-card.founder-card-1
           .founders__img-wrap
@@ -96,10 +96,10 @@ block content
             .founders__mask
             .founders-card__mask
             .founders-card__text-wrap 
-              h3.founders-card__name Вікторія Сорель
+              h3.founders-card__name Victoria Sorel
               .founders-card__descr.founder-card-decsr-1
-                p Співвласниця, генеральний директор, ідеолог компанії VISIA Terra Project
-                span Топ-менеджерка з великим практичним досвідом запуску побудови та реорганізації бізнесів на різних етапах розвитку. Інженерка-будівельниця з досвідом проєктування та будівництва об’єктів промислового та цивільного призначення в Україні та ЄС.
+                p Co-owner, general director, ideologist of the VISIA Terra Project
+                span Top manager with extensive practical experience in launching the construction and reorganization of businesses at different stages of development. Civil engineer with experience in design and construction of industrial and civil facilities in Ukraine and the EU.
 
         .founders-card.founder-card-2
           .founders__img-wrap
@@ -107,15 +107,15 @@ block content
             .founders__mask
             .founders-card__mask
             .founders-card__text-wrap 
-              h3.founders-card__name Андрій Вавриш
+              h3.founders-card__name Andriy Vavrish 
               .founders-card__descr.founder-card-decsr-2
-                p Співвласник, ідеолог та візіонер компанії VISIA Terra Project
-                span СЕО холдингу SAGA Development, експерт ринку нерухомості із багаторічним досвідом у галузі девелопменту та будівництва.
+                p Co-owner, ideologist and visionary of the VISIA Terra Project
+                span CEO of SAGA Development holding, real estate market expert with many years of experience in development and construction.
 
       .team__members-cards-wrap 
         canvas(id="space").team-members__bg
         .team__members-descr 
-          p Наша команда менеджменту — це динамічний і висококваліфікований злагоджений колектив, який керує всіма аспектами діяльності компанії.
+          p Our management team is a dynamic and highly qualified team that manages all aspects of the company's activities.
         .team__gallery
           each member in teamMembers
             .member-card(class=`member-card${member.num} member-card`)
@@ -144,12 +144,13 @@ block content
     .container
       .section-title 
         .section-title__square 
-        h2.section-title__text Проєкти
+        h2.section-title__text Projects
       .projects__descr-container
-        p Результатом діяльності VISIA Terra Project є 3,5 мільйони квадратних метрів площі запроєктованих об'єктів житлового та адміністративного призначення. Крім цього, понад 50 об’єктів промислового призначення, в тому числі автозаправні станції.
+        p The result of the activities of VISIA Terra Project is 3.5 million square meters of designed residential and administrative facilities. In addition, more than 50 industrial facilities, including gas stations.
         p.mobile-none Result
       .projects__advantages-wrap 
-        p Комплекс проєктної документації, що є результатом діяльності VISIA Terra Project, відповідає державним будівельним нормам України та адаптивний під європейські стандарти та норми. 
+        p The complex design documentation, which is the result of the VISIA Terra Project, meets the state construction standards of Ukraine and is adapted to European standards and norms.
+
       .swiper
         .swiper-scrollbar-wrap
           .swiper-scrollbar

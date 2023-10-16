@@ -6,16 +6,17 @@ import 'swiper/css/scrollbar';
 import '../modules/effects/imgParallax';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Lenis from '@studio-freight/lenis';
-import '../modules/effects/teamStars';
-// import { executeFrame } from '../modules/effects/teamStars';
+// import '../modules/effects/teamStars';
+import { executeFrame } from '../modules/effects/teamStars';
+
 gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis({
   lerp: 0.1,
   infinite: false,
   smoothWheel: true,
 });
-// executeFrame();
 
+executeFrame();
 lenis.on('scroll', () => ScrollTrigger.update());
 
 function raf(time) {
@@ -49,44 +50,51 @@ const swiper = new Swiper('.swiper', {
 });
 
 const heroTl = gsap.timeline();
-
-heroTl
-  .fromTo('.section-bg', { scale: 1.2, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 1 })
-  .from(
-    '.hero__title span',
-    {
-      autoAlpha: 0,
-      xPercent: 50,
-      duration: 1.2,
-    },
-    '<0.2',
-  )
-  .from(
-    '.hero__title h1',
-    {
-      autoAlpha: 0,
-      xPercent: -50,
-      duration: 1.2,
-    },
-    '<',
-  )
-  .from(
-    '.hero__title div',
-    {
-      scale: 0,
-      duration: 1.2,
-    },
-    '<',
-  )
-  .from(
-    '.header',
-    {
-      scale: 0.5,
-      opacity: 0,
-      duration: 1,
-    },
-    '<',
-  );
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    heroTl
+      .fromTo(
+        '.section-bg',
+        { scale: 1.2, opacity: 0 },
+        { scale: 1.0, opacity: 1, duration: 1, delay: 0.5 },
+      )
+      .from(
+        '.hero__title span',
+        {
+          autoAlpha: 0,
+          xPercent: 50,
+          duration: 1.2,
+        },
+        '<0.2',
+      )
+      .from(
+        '.hero__title h1',
+        {
+          autoAlpha: 0,
+          xPercent: -50,
+          duration: 1.2,
+        },
+        '<',
+      )
+      .from(
+        '.header',
+        {
+          scale: 0.5,
+          opacity: 0,
+          duration: 1,
+        },
+        '<',
+      )
+      .from(
+        '.hero__title div',
+        {
+          scale: 0,
+          duration: 1.2,
+        },
+        '<0.1',
+      );
+  }, 2500);
+});
 
 //Анімована поява тексту по літері
 

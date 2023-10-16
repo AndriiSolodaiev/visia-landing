@@ -30,10 +30,10 @@
 }
 
 .hero__title-container {
-  padding-top: 246px;
+  padding-top: 40vh;
 
   @include tablet {
-    padding-top: 332px;
+    padding-top: 32vh;
   }
 
   @include laptop {
@@ -541,16 +541,18 @@ section {
 
 .team__members-cards-wrap {
   position: relative;
+  overflow: hidden;
 }
 
 .team-members__bg {
   position: absolute;
-  top: -10%;
-  left: -5%;
-  width: 110%;
-  height: 130%;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  border-radius: 20%;
   z-index: -1;
-  background: $bg-color;
+
 }
 
 .team__members-descr {
@@ -914,6 +916,12 @@ section {
     position: relative;
     padding-left: 31px;
     line-height: 100%;
+    width: fit-content;
+    background: linear-gradient(269deg, #ecd3ab 0%, #a4866a 51.34%, #fefce9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 
     &::before {
       content: '';
@@ -924,7 +932,8 @@ section {
       left: 0;
       height: 16px;
       width: 16px;
-      background-color: $color-1-1;
+      // background-color: $color-1-1;
+      background-image: linear-gradient(269deg, #ecd3ab 0%, #ead0b7 51.34%, #fefce9 100%);
     }
   }
 }
