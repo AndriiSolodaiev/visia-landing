@@ -126,7 +126,7 @@ function initializeStars() {
   for (i = 0; i < numStars; i++) {
     star = {
       x: Math.random() * canvas.width,
-      y: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
       z: Math.random() * canvas.width,
       o: '0.' + Math.floor(Math.random() * 10) + 1,
     };
@@ -158,7 +158,7 @@ function drawStars() {
     c.fillStyle = 'rgb(33, 33, 33)';
     c.fillRect(0, 0, canvas.width, canvas.height);
   }
-  c.fillStyle = 'rgba(212, 187, 119, ' + radius + ')';
+  c.fillStyle = 'rgba(167, 153, 111, ' + radius + ')';
   for (i = 0; i < numStars; i++) {
     star = stars[i];
 
@@ -166,10 +166,10 @@ function drawStars() {
     pixelX += centerX;
     pixelY = (star.y - centerY) * (focalLength / star.z);
     pixelY += centerY;
-    pixelRadius = (canvas.width / 1000) * (focalLength / star.z);
+    pixelRadius = (canvas.width / 700) * (focalLength / star.z);
 
     c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
-    c.fillStyle = 'rgba(212, 187, 119, ' + star.o + ')';
+    c.fillStyle = 'rgba(167, 153, 111, ' + star.o + ')';
     //c.fill();
   }
 }

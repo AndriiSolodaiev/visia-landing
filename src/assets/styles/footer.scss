@@ -94,6 +94,11 @@
 
   .adress {
     max-width: 165px;
+    background: linear-gradient(269deg, #ecd3ab 0%, #a4866a 51.34%, #fefce9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
   }
 
   @include tablet {
@@ -155,4 +160,11 @@
     width: 80px;
     height: 80px;
   }
+}
+
+.phone {
+  background: linear-gradient(269deg, #ecd3ab 0%, #a4866a 51.34%, #fefce9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

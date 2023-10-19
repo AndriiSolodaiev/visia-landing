@@ -55,8 +55,8 @@ window.addEventListener('load', () => {
     heroTl
       .fromTo(
         '.section-bg',
-        { scale: 1.2, opacity: 0 },
-        { scale: 1.0, opacity: 1, duration: 1, delay: 0.5 },
+        { scale: 1.4, opacity: 0 },
+        { scale: 1.2, opacity: 1, duration: 1, delay: 0.5 },
       )
       .from(
         '.hero__title span',
@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
         },
         '<0.1',
       );
-  }, 2500);
+  }, 1800);
 });
 
 //Анімована поява тексту по літері
@@ -158,7 +158,7 @@ gsap
   .timeline({
     scrollTrigger: {
       trigger: '.img-wrap__small-img',
-      start: 'top center',
+      start: 'top 60%',
       end: '+=50%',
     },
   })
@@ -167,29 +167,28 @@ gsap
     {
       clipPath: 'polygon(0 0, 0 0, 100% 0, 100% 0)',
       opacity: 0,
-      scale: 1.5,
     },
     {
       clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-      scale: 1,
+      duration: 0.7,
       opacity: 1,
     },
-  );
+  )
+  .from('.img-wrap__text .anim__text', { xPercent: -500, opacity: 0 }, '<');
 gsap
   .timeline({
     scrollTrigger: {
       trigger: '.img-wrap__big-img',
-      start: 'top center',
+      start: 'top 60%',
       end: '+=50%',
     },
   })
   .fromTo(
     '.img-wrap__big-img img',
     { clipPath: 'polygon(0 0, 0 0, 100% 100%, 0 0)', opacity: 0 },
-    { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', scale: 1.5, opacity: 1 },
+    { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', opacity: 1, duration: 0.7 },
     '<',
-  )
-  .from('.img-wrap__text .anim__text', { xPercent: -700, opacity: 0 }, '<').from;
+  );
 
 const missionTl = gsap.timeline({
   scrollTrigger: {
@@ -231,8 +230,26 @@ gsap.timeline().to('.founder-card-decsr-2 span', {
   },
   maxHeight: 500,
 });
-teamTl.from('.team .section-title', { scale: 0, duration: 0.3 }).add(animateText('.team'), '<0.2');
+teamTl
+  .from('.team .section-title', { scale: 0, duration: 0.3 })
+  .add(animateText('.team'), '<0.2')
+  .from('.founders-card', {
+    xPercent: 100,
+    opacity: 0,
+    duration: 0.7,
+    stagger: 0.2,
+  });
 
+gsap.from('.team__members-descr p', {
+  scrollTrigger: {
+    trigger: '.team__members-descr',
+    start: 'top 70%',
+    end: '0',
+  },
+  yPercent: -100,
+  opacity: 0,
+  duration: 1.2,
+});
 document.querySelectorAll('.member-content__wrap').forEach((member, index, array) => {
   gsap
     .timeline({
@@ -256,7 +273,7 @@ document.querySelectorAll('.member-content__wrap').forEach((member, index, array
         scale: 1,
         opacity: 1,
         y: 0,
-        delay: 0.1 * Math.random() * 1,
+        delay: 0.1 * Math.random(),
       },
     );
 });

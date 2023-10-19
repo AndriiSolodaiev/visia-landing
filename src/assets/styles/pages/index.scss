@@ -37,7 +37,7 @@
   }
 
   @include laptop {
-    padding-top: 280px;
+    padding-top: 25vh;
   }
 }
 
@@ -546,11 +546,11 @@ section {
 
 .team-members__bg {
   position: absolute;
-  top: 0;
+  top: -20%;
   left: -50%;
   width: 200%;
-  height: 100%;
-  border-radius: 20%;
+  height: 130%;
+  // border-radius: 20%;
   z-index: -1;
 
 }
@@ -777,8 +777,10 @@ section {
 
 .member__text-wrap {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
   z-index: 2;
 
   @include tablet {
@@ -786,8 +788,7 @@ section {
   }
 
   @include laptop {
-    bottom: 30px;
-    left: 30px;
+    padding: 30px;
   }
 }
 
